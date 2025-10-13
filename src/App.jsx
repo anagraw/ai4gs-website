@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Globe, Users, Calendar, Mail, BookOpen, Heart } from 'lucide-react';
 import People from './People';
 import Partners from './Partners';
+import Questions from './Questions';
 
 export default function AI4GSWebsite() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,7 +15,7 @@ export default function AI4GSWebsite() {
     { name: 'Events', id: 'events', page: 'home' },
     { name: 'People', id: 'people', page: 'people' },
     { name: 'Partners', id: 'partners', page: 'partners' },
-    { name: 'Contact', id: 'contact', page: 'home' },
+    { name: 'Submit Questions', id: 'questions', page: 'questions' },
   ];
 
   // Scroll spy effect
@@ -22,7 +23,7 @@ export default function AI4GSWebsite() {
     if (currentPage !== 'home') return;
 
     const handleScroll = () => {
-      const sections = ['home', 'about', 'events', 'contact'];
+      const sections = ['home', 'about', 'events'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -67,35 +68,35 @@ export default function AI4GSWebsite() {
   const eventsData = [
     {
       day: 'Day 1',
-      date: 'December 1st, 2025',
+      date: 'December 9th, 2025',
       events: [
         { time: '09:00 AM', title: 'Event 1', description: 'Opening keynote and welcome session' },
-        { time: '11:00 AM', title: 'Event 2', description: 'Panel discussion on AI for agriculture' },
-        { time: '02:00 PM', title: 'Event 3', description: 'Workshop: ML fundamentals' },
-        { time: '04:00 PM', title: 'Event 4', description: 'Poster session and networking' },
-        { time: '06:00 PM', title: 'Event 5', description: 'Evening social event' },
+        { time: '11:00 AM', title: 'Event 2', description: 'Panel discussion' },
+        { time: '02:00 PM', title: 'Event 3', description: 'Thematic discussions' },
+        { time: '04:00 PM', title: 'Event 4', description: 'Breakout sessions' },
+        { time: '06:00 PM', title: 'Event 5', description: 'Evening networking' },
       ]
     },
     {
       day: 'Day 2',
-      date: 'December 2nd, 2025',
+      date: 'December 10th, 2025',
       events: [
-        { time: '09:00 AM', title: 'Event 1', description: 'Research talks: Healthcare AI' },
-        { time: '11:00 AM', title: 'Event 2', description: 'Hands-on tutorial: NLP for low-resource languages' },
-        { time: '02:00 PM', title: 'Event 3', description: 'Industry showcase' },
-        { time: '04:00 PM', title: 'Event 4', description: 'Breakout sessions' },
-        { time: '06:00 PM', title: 'Event 5', description: 'Collaborative dinner' },
+        { time: '09:00 AM', title: 'Event 1', description: 'Research presentations' },
+        { time: '11:00 AM', title: 'Event 2', description: 'Collaborative workshops' },
+        { time: '02:00 PM', title: 'Event 3', description: 'Policy roundtables' },
+        { time: '04:00 PM', title: 'Event 4', description: 'Sectoral discussions' },
+        { time: '06:00 PM', title: 'Event 5', description: 'Social event' },
       ]
     },
     {
       day: 'Day 3',
-      date: 'December 3rd, 2025',
+      date: 'December 11th, 2025',
       events: [
-        { time: '09:00 AM', title: 'Event 1', description: 'Climate AI presentations' },
-        { time: '11:00 AM', title: 'Event 2', description: 'Ethics and responsible AI panel' },
-        { time: '02:00 PM', title: 'Event 3', description: 'Student research competition' },
-        { time: '04:00 PM', title: 'Event 4', description: 'Future directions roundtable' },
-        { time: '06:00 PM', title: 'Event 5', description: 'Closing ceremony' },
+        { time: '09:00 AM', title: 'Event 1', description: 'Roadmap development sessions' },
+        { time: '11:00 AM', title: 'Event 2', description: 'Future directions panel' },
+        { time: '02:00 PM', title: 'Event 3', description: 'Synthesis and outcomes' },
+        { time: '04:00 PM', title: 'Event 4', description: 'Closing remarks' },
+        { time: '05:00 PM', title: 'Event 5', description: 'Farewell reception' },
       ]
     }
   ];
@@ -105,25 +106,39 @@ export default function AI4GSWebsite() {
       {/* Hero Section */}
       <section id="home" className="pt-24 pb-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            AI for Global South
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+            AI for the Global South
           </h1>
+          <h2 className="text-2xl md:text-3xl font-semibold text-indigo-600 mb-6">
+            Research Roadmap for the Next Decade
+          </h2>
+          <div className="flex items-center justify-center gap-4 mb-8 text-lg md:text-xl text-gray-700">
+            <span className="font-semibold">December 9-11, 2025</span>
+            <span className="text-gray-400">|</span>
+            <span className="font-semibold">MBZUAI, Abu Dhabi</span>
+          </div>
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Empowering communities through accessible artificial intelligence research, 
-            education, and collaboration across the Global South
+            An exclusive, invitation-only gathering to define a 10-year holistic and transdisciplinary 
+            research agenda for maximizing AI's positive impact on the Global South
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <button 
-              onClick={() => scrollToSection('about')}
+              onClick={() => {
+                setCurrentPage('people');
+                setActiveSection('people');
+              }}
               className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors shadow-lg"
             >
-              Learn More
+              Speaker Line-up
             </button>
             <button 
-              onClick={() => scrollToSection('contact')}
+              onClick={() => {
+                setCurrentPage('questions');
+                setActiveSection('questions');
+              }}
               className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg border-2 border-indigo-600"
             >
-              Get Involved
+              Submit Questions
             </button>
           </div>
         </div>
@@ -133,44 +148,50 @@ export default function AI4GSWebsite() {
       <section id="about" className="py-16 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">About AI4GS</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6 rounded-lg bg-indigo-50">
-              <BookOpen className="h-12 w-12 text-indigo-600 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Research</h3>
-              <p className="text-gray-600">
-                Advancing AI research that addresses challenges unique to the Global South, 
-                from agriculture to healthcare and education.
+          
+          <div className="max-w-4xl mx-auto mb-12">
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              AI has made extraordinary progress, yet its benefits remain unevenly distributed, with much of the 
+              Global South underrepresented and underserved. This seminar will serve as a forum for{' '}
+              <span className="font-semibold text-indigo-600">open dialogue and collective exploration</span>, asking:
+            </p>
+            <div className="bg-indigo-50 p-6 rounded-lg mb-6">
+              <p className="text-lg text-gray-800 italic">
+                How can we ensure that AI reflects the diversity of the world's languages, cultures, and economies? 
+                How do we design systems that are inclusive, equitable, and responsive to real developmental needs?
               </p>
             </div>
-            <div className="text-center p-6 rounded-lg bg-indigo-50">
-              <Users className="h-12 w-12 text-indigo-600 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Community</h3>
-              <p className="text-gray-600">
-                Building a vibrant network of researchers, students, and practitioners 
-                committed to democratizing AI knowledge and tools.
-              </p>
-            </div>
-            <div className="text-center p-6 rounded-lg bg-indigo-50">
-              <Heart className="h-12 w-12 text-indigo-600 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Impact</h3>
-              <p className="text-gray-600">
-                Creating meaningful change through AI solutions that are culturally relevant, 
-                ethical, and accessible to underserved communities.
-              </p>
-            </div>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              This seminar is planned as a <span className="font-semibold">precursor event and pre-gathering to the full IndiaAI initiative</span>.
+            </p>
           </div>
-          <div className="mt-12 max-w-4xl mx-auto text-gray-700 leading-relaxed">
-            <p className="text-lg mb-4">
-              AI4GS (AI for Global South) is an initiative dedicated to fostering artificial intelligence 
-              research, education, and collaboration that specifically addresses the needs and challenges 
-              of communities in the Global South.
-            </p>
-            <p className="text-lg">
-              We believe that AI should be accessible, inclusive, and designed to solve real-world problems 
-              faced by developing nations. Through symposiums, workshops, and collaborative projects, we aim 
-              to bridge the gap between cutting-edge AI research and practical applications in resource-constrained 
-              environments.
-            </p>
+
+          <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Thematic Discussions</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="p-6 rounded-lg bg-indigo-50 border-l-4 border-indigo-600">
+              <h4 className="text-lg font-bold text-gray-900 mb-2">Multilingual and Multimodal AI</h4>
+              <p className="text-gray-600">For diverse cultures and contexts</p>
+            </div>
+            <div className="p-6 rounded-lg bg-indigo-50 border-l-4 border-indigo-600">
+              <h4 className="text-lg font-bold text-gray-900 mb-2">Frugal and Sustainable AI</h4>
+              <p className="text-gray-600">In low-resource and low-compute environments</p>
+            </div>
+            <div className="p-6 rounded-lg bg-indigo-50 border-l-4 border-indigo-600">
+              <h4 className="text-lg font-bold text-gray-900 mb-2">AI for Development</h4>
+              <p className="text-gray-600">Economic inclusion, employment, and livelihoods</p>
+            </div>
+            <div className="p-6 rounded-lg bg-indigo-50 border-l-4 border-indigo-600">
+              <h4 className="text-lg font-bold text-gray-900 mb-2">Evaluation & Accountability</h4>
+              <p className="text-gray-600">Frameworks for equitable AI</p>
+            </div>
+            <div className="p-6 rounded-lg bg-indigo-50 border-l-4 border-indigo-600">
+              <h4 className="text-lg font-bold text-gray-900 mb-2">Community-Driven Design</h4>
+              <p className="text-gray-600">For trust and relevance</p>
+            </div>
+            <div className="p-6 rounded-lg bg-indigo-50 border-l-4 border-indigo-600">
+              <h4 className="text-lg font-bold text-gray-900 mb-2">Sectoral Priorities</h4>
+              <p className="text-gray-600">Agriculture, healthcare, and education</p>
+            </div>
           </div>
         </div>
       </section>
@@ -179,7 +200,7 @@ export default function AI4GSWebsite() {
       <section id="events" className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">Program Schedule</h2>
-          <p className="text-center text-gray-600 mb-12 text-lg">December 1-3, 2025</p>
+          <p className="text-center text-gray-600 mb-12 text-lg">December 9-11, 2025</p>
           
           <div className="space-y-12">
             {eventsData.map((dayData, dayIndex) => (
@@ -229,39 +250,41 @@ export default function AI4GSWebsite() {
       {/* Contact Section */}
       <section id="contact" className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Get In Touch</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Contact Us</h2>
           <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-lg border-2 border-indigo-100">
             <div className="mb-8 p-6 bg-white rounded-lg border-l-4 border-indigo-600">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">About This Event</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">About This Seminar</h3>
               <p className="text-gray-700 leading-relaxed">
-                This is a <span className="font-semibold text-indigo-600">precursor event and pre-gathering</span> to 
-                the full AI4GS initiative. Join us for this inaugural session as we lay the foundation for a larger 
-                symposium series dedicated to advancing AI research and applications across the Global South.
+                This is an <span className="font-semibold text-indigo-600">exclusive, invitation-only gathering</span> that 
+                will convene leading voices from AI, HCI, development studies, ethicists, policy makers, NGOs, and other 
+                stakeholders to define a 10-year holistic and transdisciplinary research agenda for maximizing AI's 
+                positive impact on the Global South.
               </p>
             </div>
 
             <div className="flex items-start mb-6">
               <Mail className="h-6 w-6 text-indigo-600 mr-3 mt-1 flex-shrink-0" />
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Email</h3>
-                <a href="mailto:Ananya.Agrawal@mbzuai.ac.ae" className="text-indigo-600 hover:underline">
-                  Ananya.Agrawal@mbzuai.ac.ae
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Contact</h3>
+                <a href="mailto:monojit.choudhury@mbzuai.ac.ae" className="text-indigo-600 hover:underline">
+                  monojit.choudhury@mbzuai.ac.ae
                 </a>
               </div>
             </div>
             <div className="flex items-start mb-6">
               <Globe className="h-6 w-6 text-indigo-600 mr-3 mt-1 flex-shrink-0" />
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Institution</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Venue</h3>
                 <p className="text-gray-700">Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</p>
+                <p className="text-gray-600 text-sm">Abu Dhabi, UAE</p>
               </div>
             </div>
             <div className="mt-8">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">Connect With Us</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-4">Get Involved</h3>
               <p className="text-gray-600 mb-4">
-                Whether you're a researcher, student, or organization interested in AI for the Global South, 
-                we'd love to hear from you. Reach out to learn about collaboration opportunities, participation 
-                in this precursor event, or to get involved with the broader AI4GS initiative.
+                Whether you're interested in attending, sponsoring, or learning more about the AI4GS initiative, 
+                we'd love to hear from you. Reach out to explore collaboration opportunities and be part of shaping 
+                the future of AI for the Global South.
               </p>
             </div>
           </div>
@@ -339,6 +362,7 @@ export default function AI4GSWebsite() {
         {currentPage === 'home' && renderHomePage()}
         {currentPage === 'people' && <People />}
         {currentPage === 'partners' && <Partners onContactClick={handleContactClick} />}
+        {currentPage === 'questions' && <Questions />}
       </div>
 
       {/* Footer */}
