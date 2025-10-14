@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
+import souroPhoto from '../photos/souro.jpg';
+
 export default function People() {
   const [selectedView, setSelectedView] = useState('organizers');
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -8,24 +10,24 @@ export default function People() {
   // Organizers data
   const coChairs = [
     { name: 'Monojit Choudhury', institution: 'MBZUAI', photoUrl: 'https://staticcdn.mbzuai.ac.ae/mbzuaiwpprd01/2024/01/monojit-choudhury-487px.jpg' },
-    { name: 'Sunayana Sitaram', institution: 'Microsoft Research India', photoUrl: 'https://www.microsoft.com/en-us/research/wp-content/uploads/2025/07/3rf13z9u-192x300.png' }
+    { name: 'Sunayana Sitaram', institution: 'Microsoft Research India', photoUrl: 'https://www.microsoft.com/en-us/research/wp-content/uploads/2018/02/Sunayana_Sitaram.png' }
   ];
 
   const executiveMembers = [
-    { name: 'Aditya Vashistha', institution: 'Cornell University' },
-    { name: 'Sunipa Dev', institution: 'Google' },
-    { name: 'Fajri Koto', institution: 'MBZUAI' },
-    { name: 'Elizabeth Churchill', institution: 'MBZUAI' }
+    { name: 'Aditya Vashistha', institution: 'Cornell University', photoUrl: 'https://www.adityavashistha.com/uploads/2/0/8/0/20800650/bowerscis-headshots-10032023-rachelphilipson-3381-2_orig.jpeg' },
+    { name: 'Sunipa Dev', institution: 'Google', photoUrl: 'https://storage.googleapis.com/gweb-research2023-media/pubtools/6609.png' },
+    { name: 'Fajri Koto', institution: 'MBZUAI', photoUrl: 'https://staticcdn.mbzuai.ac.ae/mbzuaiwpprd01/2024/07/Untitled-design-11.png' },
+    { name: 'Elizabeth Churchill', institution: 'MBZUAI', photoUrl: 'https://staticcdn.mbzuai.ac.ae/mbzuaiwpprd01/2024/05/ElizabethChurchill-487px.jpg' }
   ];
 
   const organizingMembers = [
-    { name: 'Ananya Agrawal' },
-    { name: 'Sourabrata Mukherjee' },
-    { name: 'Sougata Saha' },
-    { name: 'Aseem Srivastava' },
-    { name: 'Madhur Jindal' },
-    { name: 'Gayatri Bhat' },
-    { name: 'Prashant Kodali' }
+    { name: 'Ananya Agrawal', photoUrl: 'https://media.licdn.com/dms/image/v2/D5603AQF-Ad8VK4sEWw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726237765982?e=1763596800&v=beta&t=5GmrJhUZAaOsvuUKOG7YBF7uSNtFV7gY6akJg2JPQpM' },
+    { name: 'Sourabrata Mukherjee', photoUrl: souroPhoto },
+    { name: 'Sougata Saha', photoUrl: 'https://media.licdn.com/dms/image/v2/C4E03AQFPBs6nx7eb6A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1637345364125?e=1763596800&v=beta&t=KLel7RzQbR7yVf8TUvwIWmmRyh74l1bUk62U_KhiloQ' },
+    { name: 'Aseem Srivastava' , photoUrl: 'https://media.licdn.com/dms/image/v2/D5603AQGGXyfG674r1w/profile-displayphoto-scale_200_200/B56ZjyiR81H8Ag-/0/1756415730296?e=1763596800&v=beta&t=rIUAFGGJDylGu55C7d5AswzmLtqyQLI8ygBIa8IO48M' },
+    { name: 'Madhur Jindal', photoUrl: 'https://media.licdn.com/dms/image/v2/D4D03AQFiN3W-V66SUw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1691561259673?e=1763596800&v=beta&t=pLEvVXPivE3rD57OyOGyRz0OK2MgP54xzFwxg3C9djA' },
+    { name: 'Gayatri Bhat' , photoUrl: 'https://media.licdn.com/dms/image/v2/C4E03AQHnFOLw9q3FAw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1569798569946?e=1763596800&v=beta&t=z69gC9NabYzKz0CRrp2JMhEuxeyU346KWcy5CBPWX9I' },
+    { name: 'Prashant Kodali', photoUrl: 'https://media.licdn.com/dms/image/v2/D5603AQFy2fxPCWBRnw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1708011185313?e=2147483647&v=beta&t=uGqWLZQrwImcowMBRa8-O3G1spyaEboZ3xhG5gkCEXs' }
   ];
 
   // Participants data - ADD YOUR PARTICIPANTS HERE
@@ -98,7 +100,12 @@ export default function People() {
         <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
           {executiveMembers.map((person, index) => (
             <div key={index} className="text-center">
-              <div className="w-32 h-32 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full mx-auto mb-4"></div>
+              {/* <div className="w-32 h-32 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full mx-auto mb-4"></div> */}
+              <img
+                src={person.photoUrl}
+                alt={`Photo of ${person.name}`}
+                className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+              />
               <h3 className="text-lg font-bold text-gray-900">{person.name}</h3>
               <p className="text-indigo-600">{person.institution}</p>
             </div>
@@ -109,10 +116,15 @@ export default function People() {
       {/* Organizing Members */}
       <div>
         <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Organizing Members</h3>
-        <div className="grid md:grid-cols-5 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-7 gap-8 max-w-6xl mx-auto">
           {organizingMembers.map((person, index) => (
             <div key={index} className="text-center">
-              <div className="w-28 h-28 bg-gradient-to-br from-indigo-300 to-purple-300 rounded-full mx-auto mb-4"></div>
+              {/* <div className="w-28 h-28 bg-gradient-to-br from-indigo-300 to-purple-300 rounded-full mx-auto mb-4"></div> */}
+              <img
+                src={person.photoUrl}
+                alt={`Photo of ${person.name}`}
+                className="w-28 h-28 rounded-full mx-auto mb-4 object-cover"
+              />
               <h3 className="text-base font-bold text-gray-900">{person.name}</h3>
             </div>
           ))}
