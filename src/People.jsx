@@ -7,15 +7,15 @@ export default function People() {
 
   // Organizers data
   const coChairs = [
-    { name: 'Monojit Choudhury', institution: 'MBZUAI' },
-    { name: 'Sunayana Sitaram', institution: 'Microsoft Research India' }
+    { name: 'Monojit Choudhury', institution: 'MBZUAI', photoUrl: 'https://staticcdn.mbzuai.ac.ae/mbzuaiwpprd01/2024/01/monojit-choudhury-487px.jpg' },
+    { name: 'Sunayana Sitaram', institution: 'Microsoft Research India', photoUrl: 'https://www.microsoft.com/en-us/research/wp-content/uploads/2025/07/3rf13z9u-192x300.png' }
   ];
 
   const executiveMembers = [
-    { name: 'Executive Member 1', institution: 'Institution' },
-    { name: 'Executive Member 2', institution: 'Institution' },
-    { name: 'Executive Member 3', institution: 'Institution' },
-    { name: 'Executive Member 4', institution: 'Institution' }
+    { name: 'Aditya Vashistha', institution: 'Cornell University' },
+    { name: 'Sunipa Dev', institution: 'Google' },
+    { name: 'Fajri Koto', institution: 'MBZUAI' },
+    { name: 'Elizabeth Churchill', institution: 'MBZUAI' }
   ];
 
   const organizingMembers = [
@@ -23,22 +23,52 @@ export default function People() {
     { name: 'Sourabrata Mukherjee' },
     { name: 'Sougata Saha' },
     { name: 'Aseem Srivastava' },
-    { name: 'Madhur Jindal' }
+    { name: 'Madhur Jindal' },
+    { name: 'Gayatri Bhat' },
+    { name: 'Prashant Kodali' }
   ];
 
   // Participants data - ADD YOUR PARTICIPANTS HERE
   const participants = [
-    { name: 'Participant 1', institution: 'Institution 1' },
-    { name: 'Participant 2', institution: 'Institution 2' },
-    { name: 'Participant 3', institution: 'Institution 3' },
-    { name: 'Participant 4', institution: 'Institution 4' },
-    { name: 'Participant 5', institution: 'Institution 5' },
-    { name: 'Participant 6', institution: 'Institution 6' },
-    { name: 'Participant 7', institution: 'Institution 7' },
-    { name: 'Participant 8', institution: 'Institution 8' },
-    { name: 'Participant 9', institution: 'Institution 9' },
-    { name: 'Participant 10', institution: 'Institution 10' },
-    // Add more participants as needed
+    // { name: 'Sunipa Dev', institution: 'Google' },
+    { name: 'Jacki O Neill', institution: 'Microsoft' },
+    // { name: 'Aditya Vashistha', institution: 'Cornell University' },
+    { name: 'Danish Pruthi', institution: 'IISc' },
+    { name: 'Ishtiaque Ahmed', institution: 'Uo Toronto' },
+    { name: 'Munmun De Choudhury', institution: 'Georgia Tech' },
+    { name: 'Yasir Zaki', institution: 'NYU Abu Dhabi' },
+    { name: 'Melissa Densmore', institution: 'UCT, South Africa' },
+    { name: 'Anil B. Deolalikar', institution: 'UC Riverside' },
+    { name: 'Chirantan Chatterjee', institution: 'MBZUAI / Sussex Abu Dhabi' },
+    { name: 'Rida Qadri', institution: 'Google' },
+    // { name: 'Gayatri Bhat', institution: 'Karya' },
+    { name: 'Julia Kreutzer', institution: 'Cohere' },
+    { name: 'Weibke Denecke', institution: 'MIT' },
+    { name: 'Hellina Nigatu', institution: 'UC Berkeley (Ethiopia)' },
+    { name: 'Joyojeet Pal', institution: 'UMich' },
+    { name: 'Howard Lakougna', institution: 'Gates Foundation' },
+    { name: 'Boulbaba', institution: 'Inception/Microsoft AI4SG' },
+    { name: 'Kentaro Toyama', institution: 'University of Michigan' },
+    { name: 'Talal Rahwan', institution: 'NYU Abu Dhabi' },
+    { name: 'Luciana Benotti', institution: 'Universidad Nacional de Córdoba' },
+    { name: 'Luis Chiruzzo', institution: 'Universidad de la República, Uruguay' },
+    { name: 'Dr Ogedegbe', institution: 'NYU' },
+    // { name: 'Monojit Choudhury', institution: 'MBZUAI' },
+    // { name: 'Sunayana Sitaram', institution: 'Microsoft Research India' },
+    // { name: 'Fajri Koto', institution: 'MBZUAI' },
+    // { name: 'Elizabeth Churchill', institution: 'MBZUAI' },
+    // { name: 'Sourabrata Mukherjee', institution: 'Microsoft Research India' },
+    // { name: 'Sougata Saha', institution: 'MBZUAI' },
+    // { name: 'Aseem', institution: 'MBZUAI' },
+    // { name: 'Ananya', institution: 'MBZUAI' },
+    // { name: 'Madhur', institution: 'MBZUAI' },
+    // { name: 'Prashant Kodali', institution: 'Microsoft Research India' },
+    { name: 'Kalika Bali', institution: 'Microsoft Research India' },
+    { name: 'Vukosi Marivate', institution: 'Uo Pretoria' },
+    { name: 'Alham Aji Fikri', institution: 'MBZUAI' },
+    { name: 'Rohini Pande', institution: 'Yale' },
+    { name: 'Animesh Mukherjee', institution: 'IIT Kgp' },
+    { name: 'Bashar Alhafni', institution: 'MBZUAI' }
   ];
 
   const renderOrganizers = () => (
@@ -49,7 +79,12 @@ export default function People() {
         <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
           {coChairs.map((person, index) => (
             <div key={index} className="text-center">
-              <div className="w-40 h-40 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full mx-auto mb-4"></div>
+              {/* <div className="w-40 h-40 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full mx-auto mb-4"></div> */}
+              <img
+                src={person.photoUrl}
+                alt={`Photo of ${person.name}`}
+                className="w-40 h-40 rounded-full mx-auto mb-4 object-cover"
+              />
               <h3 className="text-xl font-bold text-gray-900">{person.name}</h3>
               <p className="text-indigo-600 font-medium">{person.institution}</p>
             </div>
