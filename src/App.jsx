@@ -12,10 +12,10 @@ export default function AI4GSWebsite() {
   const navigation = [
     { name: 'Home', id: 'home', page: 'home' },
     { name: 'About', id: 'about', page: 'home' },
-    { name: 'Events', id: 'events', page: 'home' },
+    // { name: 'Events', id: 'events', page: 'home' },
     { name: 'People', id: 'people', page: 'people' },
     { name: 'Partners', id: 'partners', page: 'partners' },
-    { name: 'Submit Questions', id: 'questions', page: 'questions' },
+    // { name: 'Submit Questions', id: 'questions', page: 'questions' },
   ];
 
   // Scroll spy effect
@@ -107,10 +107,10 @@ export default function AI4GSWebsite() {
       <section id="home" className="pt-24 pb-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-            AI for the Global South
+            AI for the Global Souths
           </h1>
           <h2 className="text-2xl md:text-3xl font-semibold text-indigo-600 mb-6">
-            Research Roadmap for the Next Decade
+            Creating a Roadmap for the Next Decade
           </h2>
           <div className="flex items-center justify-center gap-4 mb-8 text-lg md:text-xl text-gray-700">
             <span className="font-semibold">December 9-11, 2025</span>
@@ -118,8 +118,8 @@ export default function AI4GSWebsite() {
             <span className="font-semibold">MBZUAI, Abu Dhabi</span>
           </div>
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            An exclusive, invitation-only gathering to define a 10-year holistic and transdisciplinary 
-            research agenda for maximizing AI's positive impact on the Global South
+            A convening of researchers who work for and with Global South communities to co-define 
+            a 10-year holistic and transdisciplinary research agenda for increasing AI's positive impact on the Global South.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <button 
@@ -129,9 +129,9 @@ export default function AI4GSWebsite() {
               }}
               className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors shadow-lg"
             >
-              Speaker Line-up
+              Participants Line-up
             </button>
-            <button 
+            {/* <button 
               onClick={() => {
                 setCurrentPage('questions');
                 setActiveSection('questions');
@@ -139,7 +139,7 @@ export default function AI4GSWebsite() {
               className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg border-2 border-indigo-600"
             >
               Submit Questions
-            </button>
+            </button> */}
           </div>
         </div>
       </section>
@@ -151,18 +151,28 @@ export default function AI4GSWebsite() {
           
           <div className="max-w-4xl mx-auto mb-12">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              AI has made extraordinary progress, yet its benefits remain unevenly distributed, with much of the 
-              Global South underrepresented and underserved. This seminar will serve as a forum for{' '}
-              <span className="font-semibold text-indigo-600">open dialogue and collective exploration</span>, asking:
+              AI has made extraordinary progress, yet its benefits remain unevenly distributed, with much of the Global South underrepresented and underserved. Further, 
+              the research agenda and progress of AI is currently shaped and dictated outside of the Global South. As an official pre-summit event of the{' '}
+              <a href="https://impact.indiaai.gov.in/" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 underline">
+                India AI Impact Summit
+              </a>{' '}
+              to be held in February 2026 in India, AI4GS will convene researchers who study and work with Global South communities from around the world to discuss two core questions:
             </p>
             <div className="bg-indigo-50 p-6 rounded-lg mb-6">
-              <p className="text-lg text-gray-800 italic">
-                How can we ensure that AI reflects the diversity of the world's languages, cultures, and economies? 
-                How do we design systems that are inclusive, equitable, and responsive to real developmental needs?
-              </p>
+              <ul className="text-lg text-gray-800 italic space-y-3 list-none">
+                <li className="flex items-start">
+                  <span className="text-indigo-600 mr-3 text-xl">→</span>
+                  <span>How can we ensure that AI reflects the diversity of the world's languages, cultures, and economies?</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-indigo-600 mr-3 text-xl">→</span>
+                  <span>How do we design systems that are inclusive, equitable, and responsive to real developmental needs?</span>
+                </li>
+              </ul>
             </div>
             <p className="text-lg text-gray-700 leading-relaxed">
-              This seminar is planned as a <span className="font-semibold">precursor event and pre-gathering to the full IndiaAI initiative</span>.
+              The three-day seminar will serve as a forum for open dialogue and collective exploration, where researchers from a wide range of disciplines and geographies will come together to 
+              lay out a roadmap for the next decade of AI research, with the Global South right at the center. 
             </p>
           </div>
 
@@ -195,58 +205,6 @@ export default function AI4GSWebsite() {
           </div>
         </div>
       </section>
-
-      {/* Events Section */}
-      <section id="events" className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">Program Schedule</h2>
-          <p className="text-center text-gray-600 mb-12 text-lg">December 9-11, 2025</p>
-          
-          <div className="space-y-12">
-            {eventsData.map((dayData, dayIndex) => (
-              <div key={dayIndex} className="relative">
-                {/* Day Header */}
-                <div className="flex items-center mb-8">
-                  <div className="bg-indigo-600 text-white px-6 py-3 rounded-lg shadow-lg">
-                    <h3 className="text-2xl font-bold">{dayData.day}</h3>
-                    <p className="text-indigo-100 text-sm">{dayData.date}</p>
-                  </div>
-                </div>
-
-                {/* Events Timeline */}
-                <div className="relative pl-8 md:pl-12">
-                  {/* Vertical Line */}
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-indigo-200"></div>
-
-                  {/* Events */}
-                  <div className="space-y-6">
-                    {dayData.events.map((event, eventIndex) => (
-                      <div key={eventIndex} className="relative">
-                        {/* Timeline Dot */}
-                        <div className="absolute -left-[35px] md:-left-[51px] top-2 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white shadow"></div>
-                        
-                        {/* Event Card */}
-                        <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-indigo-600">
-                          <div className="flex flex-col md:flex-row md:items-start md:justify-between">
-                            <div className="flex-1">
-                              <div className="flex items-center gap-3 mb-2">
-                                <span className="text-indigo-600 font-bold text-sm">{event.time}</span>
-                                <h4 className="text-xl font-bold text-gray-900">{event.title}</h4>
-                              </div>
-                              <p className="text-gray-600">{event.description}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
