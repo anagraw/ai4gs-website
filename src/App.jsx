@@ -107,10 +107,10 @@ export default function AI4GSWebsite() {
       <section id="home" className="pt-24 pb-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-            AI for the Global South
+            AI for the Global Souths
           </h1>
           <h2 className="text-2xl md:text-3xl font-semibold text-indigo-600 mb-6">
-            Co-Creating a Research Roadmap for the Next Decade
+            Creating a Roadmap for the Next Decade
           </h2>
           <div className="flex items-center justify-center gap-4 mb-8 text-lg md:text-xl text-gray-700">
             <span className="font-semibold">December 9-11, 2025</span>
