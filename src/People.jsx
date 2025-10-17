@@ -1,77 +1,114 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
-import souroPhoto from '../photos/souro.jpg';
+// Import all photos from the local photo directory
+import AdityaVashistha from '../photos/Aditya Vashistha.jpeg';
+import AlhamAjiFikri from '../photos/Alham Aji Fikri.jpg';
+import AnanyaAgrawal from '../photos/Ananya Agrawal.jpg';
+import AnimeshMukherjee from '../photos/Animesh Mukherjee.jpg';
+import AseemSrivastava from '../photos/Aseem Srivastava.jpg';
+import BasharAlhafni from '../photos/Bashar Alhafni.png';
+import BoulbabaBenAmor from '../photos/Boulbaba Ben Amor.png';
+import ChirantanChatterjee from '../photos/Chirantan Chatterjee.jpg';
+import DanishPruthi from '../photos/Danish Pruthi.jpg';
+import ElizabethChurchill from '../photos/Elizabeth Churchill.jpg';
+import FajriKoto from '../photos/Fajri Koto.png';
+import GayatriBhat from '../photos/Gayatri Bhat.jpg';
+import HellinaNigatu from '../photos/Hellina Nigatu.png';
+import HowardLakougna from '../photos/Howard Lakougna.jpeg';
+import IshtiaqueAhmed from '../photos/Ishtiaque Ahmed.jpg';
+import JackiONeill from '../photos/Jacki O Neill.jpg';
+import JoyojeetPal from '../photos/Joyojeet Pal.jpg';
+import KalikaBali from '../photos/Kalika Bali.jpg';
+import KentaroToyama from '../photos/Kentaro Toyama.jpg';
+import LucianaBenotti from '../photos/Luciana Benotti.jpeg';
+import LuizChiruzzo from '../photos/Luiz Chiruzzo.jpg';
+import MadhurJindal from '../photos/Madhur Jindal.jpg';
+import MelissaDensmore from '../photos/Melissa Densmore.jpg';
+import MonojitChoudhury from '../photos/Monojit Choudhury.jpg';
+import MunmunDeChoudhury from '../photos/Munmun De Choudhury.png';
+import NaiyarrahHussain from '../photos/Naiyarrah Hussain.jpg';
+import PrashantKodali from '../photos/Prashant Kodali.jpg';
+import RidaQadri from '../photos/Rida Qadri.jpg';
+// import RohiniPande from '../photos/Rohini Pande.jpg';
+import SougataSaha from '../photos/Sougata Saha.jpeg';
+import SourabrataMukherjee from '../photos/Sourabrata Mukherjee.jpg';
+import SunayanaSitaram from '../photos/Sunayana Sitaram.png';
+import SunipaDev from '../photos/Sunipa Dev.jpg';
+import TalalRahwan from '../photos/Talal Rahwan.jpg';
+import VukosiMarivate from '../photos/Vukosi Marivate.jpg';
+import WeibkeDenecke from '../photos/Wiebke Denecke.jpg';
+import YasirZaki from '../photos/Yasir Zaki.png';
+import Yosephine from '../photos/Yosephine.jpg';
+import AnilBDeolalikar from '../photos/‪Anil B. Deolalikar.png';
+import JuliaKreutzer from '../photos/Julia Kreutzer.jpg';
+import GbengaOgedegbe from '../photos/Gbenga Ogedegbe.jpg';
+import ThamarSolorio from '../photos/Thamar Solorio.jpg';
 
 export default function People() {
   const [selectedView, setSelectedView] = useState('organizers');
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  // Organizers data
+  // Sorted alphabetically by name
+
   const coChairs = [
-    { name: 'Monojit Choudhury', institution: 'MBZUAI', photoUrl: 'https://staticcdn.mbzuai.ac.ae/mbzuaiwpprd01/2024/01/monojit-choudhury-487px.jpg' },
-    { name: 'Sunayana Sitaram', institution: 'Microsoft Research India', photoUrl: 'https://www.microsoft.com/en-us/research/wp-content/uploads/2018/02/Sunayana_Sitaram.png' }
-  ];
+    { name: 'Monojit Choudhury', institution: 'MBZUAI', photoUrl: MonojitChoudhury },
+    { name: 'Sunayana Sitaram', institution: 'Microsoft Research India', photoUrl: SunayanaSitaram }
+  ].sort((a, b) => a.name.localeCompare(b.name));
 
   const executiveMembers = [
-    { name: 'Aditya Vashistha', institution: 'Cornell University', photoUrl: 'https://www.adityavashistha.com/uploads/2/0/8/0/20800650/bowerscis-headshots-10032023-rachelphilipson-3381-2_orig.jpeg' },
-    { name: 'Sunipa Dev', institution: 'Google', photoUrl: 'https://storage.googleapis.com/gweb-research2023-media/pubtools/6609.png' },
-    { name: 'Fajri Koto', institution: 'MBZUAI', photoUrl: 'https://staticcdn.mbzuai.ac.ae/mbzuaiwpprd01/2024/07/Untitled-design-11.png' },
-    { name: 'Elizabeth Churchill', institution: 'MBZUAI', photoUrl: 'https://staticcdn.mbzuai.ac.ae/mbzuaiwpprd01/2024/05/ElizabethChurchill-487px.jpg' }
-  ];
+    { name: 'Aditya Vashistha', institution: 'Cornell University', photoUrl: AdityaVashistha },
+    { name: 'Elizabeth Churchill', institution: 'MBZUAI', photoUrl: ElizabethChurchill },
+    { name: 'Fajri Koto', institution: 'MBZUAI', photoUrl: FajriKoto },
+    { name: 'Sunipa Dev', institution: 'Google', photoUrl: SunipaDev }
+  ].sort((a, b) => a.name.localeCompare(b.name));
 
   const organizingMembers = [
-    { name: 'Ananya Agrawal', photoUrl: 'https://media.licdn.com/dms/image/v2/D5603AQF-Ad8VK4sEWw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726237765982?e=1763596800&v=beta&t=5GmrJhUZAaOsvuUKOG7YBF7uSNtFV7gY6akJg2JPQpM' },
-    { name: 'Sourabrata Mukherjee', photoUrl: souroPhoto },
-    { name: 'Sougata Saha', photoUrl: 'https://media.licdn.com/dms/image/v2/C4E03AQFPBs6nx7eb6A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1637345364125?e=1763596800&v=beta&t=KLel7RzQbR7yVf8TUvwIWmmRyh74l1bUk62U_KhiloQ' },
-    { name: 'Aseem Srivastava' , photoUrl: 'https://media.licdn.com/dms/image/v2/D5603AQGGXyfG674r1w/profile-displayphoto-scale_200_200/B56ZjyiR81H8Ag-/0/1756415730296?e=1763596800&v=beta&t=rIUAFGGJDylGu55C7d5AswzmLtqyQLI8ygBIa8IO48M' },
-    { name: 'Madhur Jindal', photoUrl: 'https://media.licdn.com/dms/image/v2/D4D03AQFiN3W-V66SUw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1691561259673?e=1763596800&v=beta&t=pLEvVXPivE3rD57OyOGyRz0OK2MgP54xzFwxg3C9djA' },
-    { name: 'Gayatri Bhat' , photoUrl: 'https://media.licdn.com/dms/image/v2/C4E03AQHnFOLw9q3FAw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1569798569946?e=1763596800&v=beta&t=z69gC9NabYzKz0CRrp2JMhEuxeyU346KWcy5CBPWX9I' },
-    { name: 'Prashant Kodali', photoUrl: 'https://media.licdn.com/dms/image/v2/D5603AQFy2fxPCWBRnw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1708011185313?e=2147483647&v=beta&t=uGqWLZQrwImcowMBRa8-O3G1spyaEboZ3xhG5gkCEXs' }
-  ];
+    { name: 'Aseem Srivastava', photoUrl: AseemSrivastava },
+    { name: 'Ananya Agrawal', photoUrl: AnanyaAgrawal },
+    { name: 'Gayatri Bhat', photoUrl: GayatriBhat },
+    { name: 'Madhur Jindal', photoUrl: MadhurJindal },
+    { name: 'Prashant Kodali', photoUrl: PrashantKodali },
+    { name: 'Sougata Saha', photoUrl: SougataSaha },
+    { name: 'Sourabrata Mukherjee', photoUrl: SourabrataMukherjee } // replaced souroPhoto
+  ].sort((a, b) => a.name.localeCompare(b.name));
 
-  // Participants data - ADD YOUR PARTICIPANTS HERE
+  // Sort participants alphabetically
   const participants = [
-    // { name: 'Sunipa Dev', institution: 'Google' },
-    { name: 'Jacki O Neill', institution: 'Microsoft' },
-    // { name: 'Aditya Vashistha', institution: 'Cornell University' },
-    { name: 'Danish Pruthi', institution: 'IISc' },
-    { name: 'Ishtiaque Ahmed', institution: 'Uo Toronto' },
-    { name: 'Munmun De Choudhury', institution: 'Georgia Tech' },
-    { name: 'Yasir Zaki', institution: 'NYU Abu Dhabi' },
-    { name: 'Melissa Densmore', institution: 'UCT, South Africa' },
-    { name: 'Anil B. Deolalikar', institution: 'UC Riverside' },
-    { name: 'Chirantan Chatterjee', institution: 'MBZUAI / Sussex Abu Dhabi' },
-    { name: 'Rida Qadri', institution: 'Google' },
-    // { name: 'Gayatri Bhat', institution: 'Karya' },
-    { name: 'Julia Kreutzer', institution: 'Cohere' },
-    { name: 'Weibke Denecke', institution: 'MIT' },
-    { name: 'Hellina Nigatu', institution: 'UC Berkeley (Ethiopia)' },
-    { name: 'Joyojeet Pal', institution: 'UMich' },
-    { name: 'Howard Lakougna', institution: 'Gates Foundation' },
-    { name: 'Boulbaba', institution: 'Inception/Microsoft AI4SG' },
-    { name: 'Kentaro Toyama', institution: 'University of Michigan' },
-    { name: 'Talal Rahwan', institution: 'NYU Abu Dhabi' },
-    { name: 'Luciana Benotti', institution: 'Universidad Nacional de Córdoba' },
-    { name: 'Luis Chiruzzo', institution: 'Universidad de la República, Uruguay' },
-    { name: 'Dr Ogedegbe', institution: 'NYU' },
-    // { name: 'Monojit Choudhury', institution: 'MBZUAI' },
-    // { name: 'Sunayana Sitaram', institution: 'Microsoft Research India' },
-    // { name: 'Fajri Koto', institution: 'MBZUAI' },
-    // { name: 'Elizabeth Churchill', institution: 'MBZUAI' },
-    // { name: 'Sourabrata Mukherjee', institution: 'Microsoft Research India' },
-    // { name: 'Sougata Saha', institution: 'MBZUAI' },
-    // { name: 'Aseem', institution: 'MBZUAI' },
-    // { name: 'Ananya', institution: 'MBZUAI' },
-    // { name: 'Madhur', institution: 'MBZUAI' },
-    // { name: 'Prashant Kodali', institution: 'Microsoft Research India' },
-    { name: 'Kalika Bali', institution: 'Microsoft Research India' },
-    { name: 'Vukosi Marivate', institution: 'Uo Pretoria' },
-    { name: 'Alham Aji Fikri', institution: 'MBZUAI' },
-    { name: 'Rohini Pande', institution: 'Yale' },
-    { name: 'Animesh Mukherjee', institution: 'IIT Kgp' },
-    { name: 'Bashar Alhafni', institution: 'MBZUAI' }
-  ];
+    { name: 'Alham Aji Fikri', institution: 'MBZUAI', photoUrl: AlhamAjiFikri },
+    { name: 'Anil B. Deolalikar', institution: 'UC Riverside', photoUrl: AnilBDeolalikar },
+    { name: 'Animesh Mukherjee', institution: 'IIT Kgp', photoUrl: AnimeshMukherjee },
+    { name: 'Bashar Alhafni', institution: 'MBZUAI', photoUrl: BasharAlhafni },
+    { name: 'Boulbaba Ben Amor', institution: 'Inception/Microsoft AI4SG', photoUrl: BoulbabaBenAmor },
+    { name: 'Chirantan Chatterjee', institution: 'MBZUAI / Sussex Abu Dhabi', photoUrl: ChirantanChatterjee },
+    { name: 'Danish Pruthi', institution: 'IISc', photoUrl: DanishPruthi },
+    // { name: 'Hellina Nigatu', institution: 'UC Berkeley (Ethiopia)', photoUrl: HellinaNigatu },
+    { name: 'Gbenga Ogedegbe', institution: 'NYU', photoUrl: GbengaOgedegbe },
+    { name: 'Howard Lakougna', institution: 'Gates Foundation', photoUrl: HowardLakougna },
+    { name: 'Ishtiaque Ahmed', institution: 'Uo Toronto', photoUrl: IshtiaqueAhmed },
+    { name: 'Jacki O Neill', institution: 'Microsoft', photoUrl: JackiONeill },
+    { name: 'Joyojeet Pal', institution: 'UMich', photoUrl: JoyojeetPal },
+    { name: 'Julia Kreutzer', institution: 'Cohere', photoUrl: JuliaKreutzer },
+    { name: 'Kalika Bali', institution: 'Microsoft Research India', photoUrl: KalikaBali },
+    { name: 'Kentaro Toyama', institution: 'University of Michigan', photoUrl: KentaroToyama },
+    { name: 'Luciana Benotti', institution: 'Universidad Nacional de Córdoba', photoUrl: LucianaBenotti },
+    { name: 'Luis Chiruzzo', institution: 'Universidad de la República, Uruguay', photoUrl: LuizChiruzzo },
+    // { name: 'Madhur Jindal', institution: 'MBZUAI', photoUrl: MadhurJindal },
+    { name: 'Melissa Densmore', institution: 'UCT, South Africa', photoUrl: MelissaDensmore },
+    // { name: 'Monojit Choudhury', institution: 'MBZUAI', photoUrl: MonojitChoudhury },
+    { name: 'Munmun De Choudhury', institution: 'Georgia Tech', photoUrl: MunmunDeChoudhury },
+    { name: 'Naiyarrah Hussain', photoUrl: NaiyarrahHussain },
+    // { name: 'Prashant Kodali', institution: 'Microsoft Research India', photoUrl: PrashantKodali },
+    { name: 'Rida Qadri', institution: 'Google', photoUrl: RidaQadri },
+    // { name: 'Sougata Saha', institution: 'MBZUAI', photoUrl: SougataSaha },
+    // { name: 'Sunayana Sitaram', institution: 'Microsoft Research India', photoUrl: SunayanaSitaram },
+    { name: 'Talal Rahwan', institution: 'NYU Abu Dhabi', photoUrl: TalalRahwan },
+    { name: 'Thamar Solorio', institution: 'MBZUAI', photoUrl: ThamarSolorio },
+    { name: 'Vukosi Marivate', institution: 'Uo Pretoria', photoUrl: VukosiMarivate },
+    { name: 'Weibke Denecke', institution: 'MIT', photoUrl: WeibkeDenecke },
+    { name: 'Yasir Zaki', institution: 'NYU Abu Dhabi', photoUrl: YasirZaki },
+    { name: 'Yosephine', institution: 'AI Singapore', photoUrl: Yosephine }
+  ].sort((a, b) => a.name.localeCompare(b.name));
 
   const renderOrganizers = () => (
     <div>
@@ -141,7 +178,12 @@ export default function People() {
       <div className="grid md:grid-cols-6 sm:grid-cols-3 grid-cols-2 gap-6 max-w-6xl mx-auto">
         {participants.map((person, index) => (
           <div key={index} className="text-center">
-            <div className="w-24 h-24 bg-gradient-to-br from-green-400 to-teal-400 rounded-full mx-auto mb-3"></div>
+            {/* <div className="w-24 h-24 bg-gradient-to-br from-green-400 to-teal-400 rounded-full mx-auto mb-3"></div> */}
+            <img
+                src={person.photoUrl}
+                alt={`Photo of ${person.name}`}
+                className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+              />
             <h3 className="text-sm font-bold text-gray-900">{person.name}</h3>
             {person.institution && (
               <p className="text-green-600 text-xs mt-1">{person.institution}</p>
