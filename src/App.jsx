@@ -8,6 +8,7 @@ export default function AI4GSWebsite() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [currentPage, setCurrentPage] = useState('home');
+  const [bannerVisible, setBannerVisible] = useState(true);
 
   const navigation = [
     { name: 'Home', id: 'home', page: 'home' },
@@ -176,7 +177,88 @@ export default function AI4GSWebsite() {
             </p>
           </div>
 
-          <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Thematic Discussions</h3>
+          {/* Horizontal Scrolling Banner */}
+          {bannerVisible && (
+            <div className="bg-gradient-to-r from-indigo-900 via-indigo-700 to-indigo-900 text-white py-6 px-4 relative overflow-hidden max-w-4xl mx-auto rounded-lg my-8">
+              <button
+                onClick={() => setBannerVisible(false)}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10"
+                aria-label="Close banner"
+              >
+                <X className="h-5 w-5" />
+              </button>
+              <div className="flex animate-scroll">
+                <div className="flex items-center gap-12 whitespace-nowrap px-12">
+                  <span className="text-base md:text-lg font-semibold">
+                    Official Pre-Summit Event of the India-AI Impact Summit 2026
+                  </span>
+                  <a 
+                    href="https://impact.indiaai.gov.in/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex-shrink-0"
+                  >
+                    <img 
+                      src="photos/ai-impact.jpg" 
+                      alt="India AI Impact Summit 2026" 
+                      className="h-16 md:h-20 w-auto rounded bg-white p-1"
+                    />
+                  </a>
+                </div>
+                <div className="flex items-center gap-12 whitespace-nowrap px-12">
+                  <span className="text-base md:text-lg font-semibold">
+                    Official Pre-Summit Event of the India-AI Impact Summit 2026
+                  </span>
+                  <a 
+                    href="https://impact.indiaai.gov.in/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex-shrink-0"
+                  >
+                    <img 
+                      src="photos/ai-impact.jpg" 
+                      alt="India AI Impact Summit 2026" 
+                      className="h-16 md:h-20 w-auto rounded bg-white p-1"
+                    />
+                  </a>
+                </div>
+                <div className="flex items-center gap-12 whitespace-nowrap px-12">
+                  <span className="text-base md:text-lg font-semibold">
+                    Official Pre-Summit Event of the India-AI Impact Summit 2026
+                  </span>
+                  <a 
+                    href="https://impact.indiaai.gov.in/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex-shrink-0"
+                  >
+                    <img 
+                      src="photos/ai-impact.jpg" 
+                      alt="India AI Impact Summit 2026" 
+                      className="h-16 md:h-20 w-auto rounded bg-white p-1"
+                    />
+                  </a>
+                </div>
+              </div>
+              <style>{`
+                @keyframes scroll {
+                  0% {
+                    transform: translateX(0);
+                  }
+                  100% {
+                    transform: translateX(-33.333%);
+                  }
+                }
+                .animate-scroll {
+                  animation: scroll 35s linear infinite;
+                }
+                .animate-scroll:hover {
+                  animation-play-state: paused;
+                }
+              `}</style>
+            </div>
+          )}
+          {/* <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Thematic Discussions</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="p-6 rounded-lg bg-indigo-50 border-l-4 border-indigo-600">
               <h4 className="text-lg font-bold text-gray-900 mb-2">Multilingual and Multimodal AI</h4>
@@ -202,7 +284,7 @@ export default function AI4GSWebsite() {
               <h4 className="text-lg font-bold text-gray-900 mb-2">Sectoral Priorities</h4>
               <p className="text-gray-600">Agriculture, healthcare, and education</p>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
       {/* Contact Section */}
@@ -314,7 +396,7 @@ export default function AI4GSWebsite() {
           </div>
         )}
       </nav>
-
+      
       {/* Page Content */}
       <div className="pt-16">
         {currentPage === 'home' && renderHomePage()}
@@ -323,6 +405,21 @@ export default function AI4GSWebsite() {
         {currentPage === 'questions' && <Questions />}
       </div>
 
+      {/* Partners Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Our Partners</h2>
+          <div className="flex justify-center items-center">
+            <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+              <img 
+                src="photos/IITD-AbuDhabi.svg" 
+                alt="IIT Delhi Abu Dhabi" 
+                className="h-24 w-auto object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8 px-4">
         <div className="max-w-7xl mx-auto text-center">
@@ -330,9 +427,12 @@ export default function AI4GSWebsite() {
             <Globe className="h-6 w-6 mr-2" />
             <span className="text-xl font-bold">AI4GS</span>
           </div>
-          <p className="text-gray-400 mb-4">AI for Global South Initiative</p>
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-400 mb-2">AI for Global South Initiative</p>
+          <p className="text-gray-500 text-sm mb-2">
             © 2025 AI4GS. Empowering communities through accessible AI.
+          </p>
+          <p className="text-gray-400 text-sm">
+            Hosted by Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)
           </p>
         </div>
       </footer>
