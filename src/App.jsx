@@ -3,6 +3,9 @@ import { Menu, X, Globe, Users, Calendar, Mail, BookOpen, Heart } from 'lucide-r
 import People from './People';
 import Partners from './Partners';
 import Questions from './Questions';
+import AiImpactLogo from '../photos/ai-impact-logo.png';
+import IITDLogo from '../photos/IITD_AbuDhabi.png';
+
 
 export default function AI4GSWebsite() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -199,7 +202,7 @@ export default function AI4GSWebsite() {
                     className="flex-shrink-0"
                   >
                     <img 
-                      src="../photos/ai-impact-logo.png" 
+                      src={AiImpactLogo} 
                       alt="India AI Impact Summit 2026" 
                       className="h-16 md:h-20 w-auto rounded bg-white p-1"
                     />
@@ -216,7 +219,7 @@ export default function AI4GSWebsite() {
                     className="flex-shrink-0"
                   >
                     <img 
-                      src="../photos/ai-impact-logo.png" 
+                      src={AiImpactLogo} 
                       alt="India AI Impact Summit 2026" 
                       className="h-16 md:h-20 w-auto rounded bg-white p-1"
                     />
@@ -396,7 +399,7 @@ export default function AI4GSWebsite() {
           <div className="flex justify-center items-center">
             <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
               <img 
-                src="../photos/IITD_AbuDhabi.png" 
+                src={IITDLogo}
                 alt="IIT Delhi Abu Dhabi" 
                 className="h-24 w-auto object-contain"
               />
