@@ -199,7 +199,7 @@ export default function AI4GSWebsite() {
                     className="flex-shrink-0"
                   >
                     <img 
-                      src="photos/ai-impact.jpg" 
+                      src="photos/ai-impact-logo.png" 
                       alt="India AI Impact Summit 2026" 
                       className="h-16 md:h-20 w-auto rounded bg-white p-1"
                     />
@@ -216,29 +216,13 @@ export default function AI4GSWebsite() {
                     className="flex-shrink-0"
                   >
                     <img 
-                      src="photos/ai-impact.jpg" 
+                      src="photos/ai-impact-logo.png" 
                       alt="India AI Impact Summit 2026" 
                       className="h-16 md:h-20 w-auto rounded bg-white p-1"
                     />
                   </a>
                 </div>
-                <div className="flex items-center gap-12 whitespace-nowrap px-12">
-                  <span className="text-base md:text-lg font-semibold">
-                    Official Pre-Summit Event of the India-AI Impact Summit 2026
-                  </span>
-                  <a 
-                    href="https://impact.indiaai.gov.in/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex-shrink-0"
-                  >
-                    <img 
-                      src="photos/ai-impact.jpg" 
-                      alt="India AI Impact Summit 2026" 
-                      className="h-16 md:h-20 w-auto rounded bg-white p-1"
-                    />
-                  </a>
-                </div>
+        
               </div>
               <style>{`
                 @keyframes scroll {
@@ -412,7 +396,7 @@ export default function AI4GSWebsite() {
           <div className="flex justify-center items-center">
             <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
               <img 
-                src="photos/IITD-AbuDhabi.svg" 
+                src="photos/IITD_AbuDhabi.png" 
                 alt="IIT Delhi Abu Dhabi" 
                 className="h-24 w-auto object-contain"
               />
