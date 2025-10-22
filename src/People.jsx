@@ -27,7 +27,8 @@ import MadhurJindal from '../photos/Madhur Jindal.jpg';
 import MelissaDensmore from '../photos/Melissa Densmore.jpg';
 import MonojitChoudhury from '../photos/Monojit Choudhury.jpg';
 import MunmunDeChoudhury from '../photos/Munmun De Choudhury.png';
-import NaiyarrahHussain from '../photos/Naiyarrah Hussain.jpg';
+// import NaiyarrahHussain from '../photos/Naiyarrah Hussain.jpg';
+import WessamEzzeddine from '../photos/Wessam Ezzeddine.jpg'
 import PrashantKodali from '../photos/Prashant Kodali.jpg';
 import RidaQadri from '../photos/Rida Qadri.jpg';
 // import RohiniPande from '../photos/Rohini Pande.jpg';
@@ -97,7 +98,8 @@ export default function People() {
     { name: 'Melissa Densmore', institution: 'UCT, South Africa', photoUrl: MelissaDensmore },
     // { name: 'Monojit Choudhury', institution: 'MBZUAI', photoUrl: MonojitChoudhury },
     { name: 'Munmun De Choudhury', institution: 'Georgia Tech', photoUrl: MunmunDeChoudhury },
-    { name: 'Naiyarrah Hussain', photoUrl: NaiyarrahHussain },
+    // { name: 'Naiyarrah Hussain', photoUrl: NaiyarrahHussain },
+    { name: 'Wessam Ezzeddine', institution: 'AI Safety UAE', photoUrl: WessamEzzeddine },
     // { name: 'Prashant Kodali', institution: 'Microsoft Research India', photoUrl: PrashantKodali },
     { name: 'Rida Qadri', institution: 'Google', photoUrl: RidaQadri },
     // { name: 'Sougata Saha', institution: 'MBZUAI', photoUrl: SougataSaha },
