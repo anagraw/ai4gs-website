@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
-// Import all photos from the local photo directory
 import AdityaVashistha from '../photos/Aditya Vashistha.jpeg';
 import AlhamAjiFikri from '../photos/Alham Aji Fikri.jpg';
 import AnanyaAgrawal from '../photos/Ananya Agrawal.jpg';
@@ -27,11 +26,9 @@ import MadhurJindal from '../photos/Madhur Jindal.jpg';
 import MelissaDensmore from '../photos/Melissa Densmore.jpg';
 import MonojitChoudhury from '../photos/Monojit Choudhury.jpg';
 import MunmunDeChoudhury from '../photos/Munmun De Choudhury.png';
-// import NaiyarrahHussain from '../photos/Naiyarrah Hussain.jpg';
 import WessamEzzeddine from '../photos/Wessam Ezzeddine.jpg'
 import PrashantKodali from '../photos/Prashant Kodali.jpg';
 import RidaQadri from '../photos/Rida Qadri.jpg';
-// import RohiniPande from '../photos/Rohini Pande.jpg';
 import SougataSaha from '../photos/Sougata Saha.jpeg';
 import SourabrataMukherjee from '../photos/Sourabrata Mukherjee.jpg';
 import SunayanaSitaram from '../photos/Sunayana Sitaram.png';
@@ -50,66 +47,57 @@ export default function People() {
   const [selectedView, setSelectedView] = useState('organizers');
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  // Sorted alphabetically by name
-
+  // Add profile links for each person
   const coChairs = [
-    { name: 'Monojit Choudhury', institution: 'MBZUAI', photoUrl: MonojitChoudhury },
-    { name: 'Sunayana Sitaram', institution: 'Microsoft Research India', photoUrl: SunayanaSitaram }
+    { name: 'Monojit Choudhury', institution: 'MBZUAI', photoUrl: MonojitChoudhury, profile: 'https://mbzuai.ac.ae/study/faculty/monojit-choudhury/' },
+    { name: 'Sunayana Sitaram', institution: 'Microsoft Research India', photoUrl: SunayanaSitaram, profile: 'https://www.microsoft.com/en-us/research/people/susitara/' }
   ].sort((a, b) => a.name.localeCompare(b.name));
 
   const executiveMembers = [
-    { name: 'Aditya Vashistha', institution: 'Cornell University', photoUrl: AdityaVashistha },
-    { name: 'Elizabeth Churchill', institution: 'MBZUAI', photoUrl: ElizabethChurchill },
-    { name: 'Fajri Koto', institution: 'MBZUAI', photoUrl: FajriKoto },
-    { name: 'Sunipa Dev', institution: 'Google', photoUrl: SunipaDev }
+    { name: 'Aditya Vashistha', institution: 'Cornell University', photoUrl: AdityaVashistha, profile: 'https://www.adityavashistha.com/' },
+    { name: 'Elizabeth Churchill', institution: 'MBZUAI', photoUrl: ElizabethChurchill, profile: 'https://elizabethchurchill.com/' },
+    { name: 'Fajri Koto', institution: 'MBZUAI', photoUrl: FajriKoto, profile: 'https://mbzuai.ac.ae/study/faculty/fajri-koto/' },
+    { name: 'Sunipa Dev', institution: 'Google', photoUrl: SunipaDev, profile: 'https://sunipa.github.io/' }
   ].sort((a, b) => a.name.localeCompare(b.name));
 
   const organizingMembers = [
-    { name: 'Aseem Srivastava', photoUrl: AseemSrivastava },
-    { name: 'Ananya Agrawal', photoUrl: AnanyaAgrawal },
-    { name: 'Gayatri Bhat', photoUrl: GayatriBhat },
-    { name: 'Madhur Jindal', photoUrl: MadhurJindal },
-    { name: 'Prashant Kodali', photoUrl: PrashantKodali },
-    { name: 'Sougata Saha', photoUrl: SougataSaha },
-    { name: 'Sourabrata Mukherjee', photoUrl: SourabrataMukherjee } // replaced souroPhoto
+    { name: 'Aseem Srivastava', photoUrl: AseemSrivastava, profile: 'https://as3eem.github.io/' },
+    { name: 'Ananya Agrawal', photoUrl: AnanyaAgrawal, profile: 'https://in.linkedin.com/in/ananya-agrawal-6b9803222' },
+    { name: 'Gayatri Bhat', photoUrl: GayatriBhat, profile: 'https://in.linkedin.com/in/gayatri-bhat-2a1a94193' },
+    { name: 'Madhur Jindal', photoUrl: MadhurJindal, profile: 'https://in.linkedin.com/in/madhur-jindal' },
+    { name: 'Prashant Kodali', photoUrl: PrashantKodali, profile: 'https://in.linkedin.com/in/prashant-kodali' },
+    { name: 'Sougata Saha', photoUrl: SougataSaha, profile: 'https://sougata-ub.github.io/' },
+    { name: 'Sourabrata Mukherjee', photoUrl: SourabrataMukherjee, profile: 'https://souro.github.io/' }
   ].sort((a, b) => a.name.localeCompare(b.name));
 
-  // Sort participants alphabetically
   const participants = [
-    { name: 'Alham Aji Fikri', institution: 'MBZUAI', photoUrl: AlhamAjiFikri },
-    { name: 'Anil B. Deolalikar', institution: 'UC Riverside', photoUrl: AnilBDeolalikar },
-    { name: 'Animesh Mukherjee', institution: 'IIT Kgp', photoUrl: AnimeshMukherjee },
-    { name: 'Bashar Alhafni', institution: 'MBZUAI', photoUrl: BasharAlhafni },
-    { name: 'Boulbaba Ben Amor', institution: 'Inception/Microsoft AI4SG', photoUrl: BoulbabaBenAmor },
-    { name: 'Chirantan Chatterjee', institution: 'MBZUAI / Sussex Abu Dhabi', photoUrl: ChirantanChatterjee },
-    { name: 'Danish Pruthi', institution: 'IISc', photoUrl: DanishPruthi },
-    // { name: 'Hellina Nigatu', institution: 'UC Berkeley (Ethiopia)', photoUrl: HellinaNigatu },
-    { name: 'Gbenga Ogedegbe', institution: 'NYU', photoUrl: GbengaOgedegbe },
-    { name: 'Howard Lakougna', institution: 'Gates Foundation', photoUrl: HowardLakougna },
-    { name: 'Ishtiaque Ahmed', institution: 'Uo Toronto', photoUrl: IshtiaqueAhmed },
-    { name: 'Jacki O Neill', institution: 'Microsoft', photoUrl: JackiONeill },
-    { name: 'Joyojeet Pal', institution: 'UMich', photoUrl: JoyojeetPal },
-    { name: 'Julia Kreutzer', institution: 'Cohere', photoUrl: JuliaKreutzer },
-    { name: 'Kalika Bali', institution: 'Microsoft Research India', photoUrl: KalikaBali },
-    { name: 'Kentaro Toyama', institution: 'University of Michigan', photoUrl: KentaroToyama },
-    { name: 'Luciana Benotti', institution: 'Universidad Nacional de Córdoba', photoUrl: LucianaBenotti },
-    { name: 'Luis Chiruzzo', institution: 'Universidad de la República, Uruguay', photoUrl: LuizChiruzzo },
-    // { name: 'Madhur Jindal', institution: 'MBZUAI', photoUrl: MadhurJindal },
-    { name: 'Melissa Densmore', institution: 'UCT, South Africa', photoUrl: MelissaDensmore },
-    // { name: 'Monojit Choudhury', institution: 'MBZUAI', photoUrl: MonojitChoudhury },
-    { name: 'Munmun De Choudhury', institution: 'Georgia Tech', photoUrl: MunmunDeChoudhury },
-    // { name: 'Naiyarrah Hussain', photoUrl: NaiyarrahHussain },
-    { name: 'Wessam Ezzeddine', institution: 'AI Safety UAE', photoUrl: WessamEzzeddine },
-    // { name: 'Prashant Kodali', institution: 'Microsoft Research India', photoUrl: PrashantKodali },
-    { name: 'Rida Qadri', institution: 'Google', photoUrl: RidaQadri },
-    // { name: 'Sougata Saha', institution: 'MBZUAI', photoUrl: SougataSaha },
-    // { name: 'Sunayana Sitaram', institution: 'Microsoft Research India', photoUrl: SunayanaSitaram },
-    { name: 'Talal Rahwan', institution: 'NYU Abu Dhabi', photoUrl: TalalRahwan },
-    { name: 'Thamar Solorio', institution: 'MBZUAI', photoUrl: ThamarSolorio },
-    { name: 'Vukosi Marivate', institution: 'Uo Pretoria', photoUrl: VukosiMarivate },
-    { name: 'Weibke Denecke', institution: 'MIT', photoUrl: WeibkeDenecke },
-    { name: 'Yasir Zaki', institution: 'NYU Abu Dhabi', photoUrl: YasirZaki },
-    { name: 'Yosephine', institution: 'AI Singapore', photoUrl: Yosephine }
+    { name: 'Alham Aji Fikri', institution: 'MBZUAI', photoUrl: AlhamAjiFikri, profile: 'https://afaji.github.io/' },
+    { name: 'Anil B. Deolalikar', institution: 'UC Riverside', photoUrl: AnilBDeolalikar, profile: 'https://profiles.ucr.edu/app/home/profile/anild' },
+    { name: 'Animesh Mukherjee', institution: 'IIT Kgp', photoUrl: AnimeshMukherjee, profile: 'https://cse.iitkgp.ac.in/~animeshm/' },
+    { name: 'Bashar Alhafni', institution: 'MBZUAI', photoUrl: BasharAlhafni, profile: 'https://www.basharalhafni.com/' },
+    { name: 'Boulbaba Ben Amor', institution: 'Inception/Microsoft AI4SG', photoUrl: BoulbabaBenAmor, profile: 'https://sites.google.com/view/boulbaba-ben-amor' },
+    { name: 'Chirantan Chatterjee', institution: 'MBZUAI / Sussex Abu Dhabi', photoUrl: ChirantanChatterjee, profile: 'https://sites.google.com/view/chirantanonline/home' },
+    { name: 'Danish Pruthi', institution: 'IISc', photoUrl: DanishPruthi, profile: 'https://danishpruthi.com/' },
+    { name: 'Gbenga Ogedegbe', institution: 'NYU', photoUrl: GbengaOgedegbe, profile: 'https://nyulangone.org/doctors/1538227699/olugbenga-g-ogedegbe' },
+    { name: 'Howard Lakougna', institution: 'Gates Foundation', photoUrl: HowardLakougna, profile: 'https://www.linkedin.com/in/howard-lakougna-5125b378' },
+    { name: 'Ishtiaque Ahmed', institution: 'Uo Toronto', photoUrl: IshtiaqueAhmed, profile: 'https://www.ishtiaque.net/' },
+    { name: 'Jacki O Neill', institution: 'Microsoft', photoUrl: JackiONeill, profile: 'https://www.microsoft.com/en-us/research/people/jaoneil/' },
+    { name: 'Joyojeet Pal', institution: 'UMich', photoUrl: JoyojeetPal, profile: 'https://www.si.umich.edu/people/joyojeet-pal' },
+    { name: 'Julia Kreutzer', institution: 'Cohere', photoUrl: JuliaKreutzer, profile: 'https://juliakreutzer.github.io/' },
+    { name: 'Kalika Bali', institution: 'Microsoft Research India', photoUrl: KalikaBali, profile: 'https://www.microsoft.com/en-us/research/people/kalikab/' },
+    { name: 'Kentaro Toyama', institution: 'University of Michigan', photoUrl: KentaroToyama, profile: 'https://www.kentarotoyama.org/profile/default.htm' },
+    { name: 'Luciana Benotti', institution: 'Universidad Nacional de Córdoba', photoUrl: LucianaBenotti, profile: 'https://benotti.github.io/' },
+    { name: 'Luis Chiruzzo', institution: 'Universidad de la República, Uruguay', photoUrl: LuizChiruzzo, profile: 'https://www.fing.edu.uy/es/node/40865' },
+    { name: 'Melissa Densmore', institution: 'UCT, South Africa', photoUrl: MelissaDensmore, profile: 'https://www.melissadensmore.com/' },
+    { name: 'Munmun De Choudhury', institution: 'Georgia Tech', photoUrl: MunmunDeChoudhury, profile: 'http://www.munmund.net/' },
+    { name: 'Wessam Ezzeddine', institution: 'AI Safety UAE', photoUrl: WessamEzzeddine, profile: 'https://ae.linkedin.com/in/wes-ezzeddine' },
+    { name: 'Rida Qadri', institution: 'Google', photoUrl: RidaQadri, profile: 'https://ridaqadri.net/' },
+    { name: 'Talal Rahwan', institution: 'NYU Abu Dhabi', photoUrl: TalalRahwan, profile: 'https://www.trahwan.com/' },
+    { name: 'Thamar Solorio', institution: 'MBZUAI', photoUrl: ThamarSolorio, profile: 'https://mbzuai.ac.ae/study/faculty/thamar-solorio/' },
+    { name: 'Vukosi Marivate', institution: 'Uo Pretoria', photoUrl: VukosiMarivate, profile: 'https://www.vima.co.za/' },
+    { name: 'Weibke Denecke', institution: 'MIT', photoUrl: WeibkeDenecke, profile: 'https://lit.mit.edu/denecke/' },
+    { name: 'Yasir Zaki', institution: 'NYU Abu Dhabi', photoUrl: YasirZaki, profile: 'https://ae.linkedin.com/in/yasir-zaki-7716a17' },
+    { name: 'Yosephine', institution: 'AI Singapore', photoUrl: Yosephine, profile: 'https://blogs.ntu.edu.sg/multi-net-lab/yosephine-susanto/' }
   ].sort((a, b) => a.name.localeCompare(b.name));
 
   const renderOrganizers = () => (
@@ -120,13 +108,16 @@ export default function People() {
         <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
           {coChairs.map((person, index) => (
             <div key={index} className="text-center">
-              {/* <div className="w-40 h-40 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full mx-auto mb-4"></div> */}
               <img
                 src={person.photoUrl}
                 alt={`Photo of ${person.name}`}
                 className="w-40 h-40 rounded-full mx-auto mb-4 object-cover"
               />
-              <h3 className="text-xl font-bold text-gray-900">{person.name}</h3>
+              <h3 className="text-xl font-bold text-gray-900">
+                <a href={person.profile} target="_blank" rel="noopener noreferrer" className="hover:underline text-indigo-600">
+                  {person.name}
+                </a>
+              </h3>
               <p className="text-indigo-600 font-medium">{person.institution}</p>
             </div>
           ))}
@@ -139,13 +130,16 @@ export default function People() {
         <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
           {executiveMembers.map((person, index) => (
             <div key={index} className="text-center">
-              {/* <div className="w-32 h-32 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full mx-auto mb-4"></div> */}
               <img
                 src={person.photoUrl}
                 alt={`Photo of ${person.name}`}
                 className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
               />
-              <h3 className="text-lg font-bold text-gray-900">{person.name}</h3>
+              <h3 className="text-lg font-bold text-gray-900">
+                <a href={person.profile} target="_blank" rel="noopener noreferrer" className="hover:underline text-indigo-600">
+                  {person.name}
+                </a>
+              </h3>
               <p className="text-indigo-600">{person.institution}</p>
             </div>
           ))}
@@ -158,13 +152,16 @@ export default function People() {
         <div className="grid md:grid-cols-7 gap-8 max-w-6xl mx-auto">
           {organizingMembers.map((person, index) => (
             <div key={index} className="text-center">
-              {/* <div className="w-28 h-28 bg-gradient-to-br from-indigo-300 to-purple-300 rounded-full mx-auto mb-4"></div> */}
               <img
                 src={person.photoUrl}
                 alt={`Photo of ${person.name}`}
                 className="w-28 h-28 rounded-full mx-auto mb-4 object-cover"
               />
-              <h3 className="text-base font-bold text-gray-900">{person.name}</h3>
+              <h3 className="text-base font-bold text-gray-900">
+                <a href={person.profile} target="_blank" rel="noopener noreferrer" className="hover:underline text-indigo-600">
+                  {person.name}
+                </a>
+              </h3>
             </div>
           ))}
         </div>
@@ -180,13 +177,16 @@ export default function People() {
       <div className="grid md:grid-cols-6 sm:grid-cols-3 grid-cols-2 gap-6 max-w-6xl mx-auto">
         {participants.map((person, index) => (
           <div key={index} className="text-center">
-            {/* <div className="w-24 h-24 bg-gradient-to-br from-green-400 to-teal-400 rounded-full mx-auto mb-3"></div> */}
             <img
-                src={person.photoUrl}
-                alt={`Photo of ${person.name}`}
-                className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
-              />
-            <h3 className="text-sm font-bold text-gray-900">{person.name}</h3>
+              src={person.photoUrl}
+              alt={`Photo of ${person.name}`}
+              className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+            />
+            <h3 className="text-sm font-bold text-gray-900">
+              <a href={person.profile} target="_blank" rel="noopener noreferrer" className="hover:underline text-green-600">
+                {person.name}
+              </a>
+            </h3>
             {person.institution && (
               <p className="text-green-600 text-xs mt-1">{person.institution}</p>
             )}
@@ -200,7 +200,7 @@ export default function People() {
     <div className="py-16 px-4 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">People</h2>
-        
+
         {/* Dropdown Menu */}
         <div className="flex justify-center mb-12">
           <div className="relative inline-block">
@@ -211,7 +211,7 @@ export default function People() {
               <span>{selectedView === 'organizers' ? 'Organizers' : 'Participants'}</span>
               <ChevronDown className={`h-5 w-5 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
             </button>
-            
+
             {dropdownOpen && (
               <div className="absolute top-full mt-2 w-full bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-10">
                 <button
