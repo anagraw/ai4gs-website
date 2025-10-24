@@ -156,7 +156,7 @@ export default function AI4GSWebsite() {
           <div className="max-w-4xl mx-auto mb-12">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               AI has made extraordinary progress, yet its benefits remain unevenly distributed, with much of the Global South underrepresented and underserved. Further, 
-              the research agenda and progress of AI is currently shaped and dictated outside of the Global South. As an official pre-summit event of the{' '}
+              the research agenda and progress of AI are presently influenced by global efforts concentrated within the Global North, with increasing potential for the Global South to play a more central role. As an official pre-summit event of the{' '}
               <a href="https://impact.indiaai.gov.in/" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 underline">
                 India AI Impact Summit
               </a>{' '}
@@ -180,7 +180,7 @@ export default function AI4GSWebsite() {
             </p>
           </div>
 
-          {/* Horizontal Scrolling Banner */}
+          {/* Horizontal Scrolling Banner
           {bannerVisible && (
             <div className="bg-gradient-to-r from-indigo-900 via-indigo-700 to-indigo-900 text-white py-6 px-4 relative overflow-hidden max-w-4xl mx-auto rounded-lg my-8">
               <button
@@ -190,43 +190,7 @@ export default function AI4GSWebsite() {
               >
                 <X className="h-5 w-5" />
               </button>
-              <div className="flex animate-scroll">
-                <div className="flex items-center gap-12 whitespace-nowrap px-12">
-                  <span className="text-base md:text-lg font-semibold">
-                    Official Pre-Summit Event of the India-AI Impact Summit 2026
-                  </span>
-                  <a 
-                    href="https://impact.indiaai.gov.in/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex-shrink-0"
-                  >
-                    <img 
-                      src={AiImpactLogo} 
-                      alt="India AI Impact Summit 2026" 
-                      className="h-16 md:h-20 w-auto rounded bg-white p-1"
-                    />
-                  </a>
-                </div>
-                <div className="flex items-center gap-12 whitespace-nowrap px-12">
-                  <span className="text-base md:text-lg font-semibold">
-                    Official Pre-Summit Event of the India-AI Impact Summit 2026
-                  </span>
-                  <a 
-                    href="https://impact.indiaai.gov.in/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex-shrink-0"
-                  >
-                    <img 
-                      src={AiImpactLogo} 
-                      alt="India AI Impact Summit 2026" 
-                      className="h-16 md:h-20 w-auto rounded bg-white p-1"
-                    />
-                  </a>
-                </div>
-        
-              </div>
+              
               <style>{`
                 @keyframes scroll {
                   0% {
@@ -244,7 +208,7 @@ export default function AI4GSWebsite() {
                 }
               `}</style>
             </div>
-          )}
+          )} */}
           {/* <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Thematic Discussions</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="p-6 rounded-lg bg-indigo-50 border-l-4 border-indigo-600">
@@ -274,6 +238,55 @@ export default function AI4GSWebsite() {
           </div> */}
         </div>
       </section>
+      {/* Pre-Summit Event Banner */}
+      <section className="py-12 px-4 bg-gradient-to-r from-indigo-50 via-purple-50 to-indigo-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white rounded-xl shadow-lg border-2 border-indigo-400 overflow-hidden">
+            <div className="bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-3">
+              <p className="text-white text-center font-semibold text-sm uppercase tracking-wide">
+                Official Pre-Summit Event
+              </p>
+            </div>
+            <div className="p-8">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                {/* Logo */}
+                <div className="flex-shrink-0">
+                  <div className="bg-white p-4 rounded-lg shadow-md">
+                    <img 
+                      src={AiImpactLogo}
+                      alt="India AI Impact Summit 2026" 
+                      className="h-32 w-auto object-contain"
+                    />
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-3xl font-bold text-gray-900 mb-3">
+                    India AI Impact Summit 2026
+                  </h3>
+                  <p className="text-lg text-gray-700 mb-4">
+                    February 2026 | India
+                  </p>
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    This seminar is the official precursor to the India AI Impact Summit, 
+                    bringing together global perspectives to shape the future of AI for the Global South.
+                  </p>
+                  <a 
+                    href="https://impact.indiaai.gov.in/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all shadow-md hover:shadow-lg"
+                  >
+                    <span>Learn More About India AI Impact Summit</span>
+                    <Globe className="h-5 w-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Contact Section */}
       <section id="contact" className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
@@ -282,7 +295,7 @@ export default function AI4GSWebsite() {
             <div className="mb-8 p-6 bg-white rounded-lg border-l-4 border-indigo-600">
               <h3 className="text-xl font-bold text-gray-900 mb-3">About This Seminar</h3>
               <p className="text-gray-700 leading-relaxed">
-                This is an <span className="font-semibold text-indigo-600">exclusive, invitation-only gathering</span> that 
+                This is an <span className="font-semibold text-indigo-600"> invitation-only gathering</span> that 
                 will convene leading voices from AI, HCI, development studies, ethicists, policy makers, NGOs, and other 
                 stakeholders to define a 10-year holistic and transdisciplinary research agenda for maximizing AI's 
                 positive impact on the Global South.
@@ -309,7 +322,7 @@ export default function AI4GSWebsite() {
             <div className="mt-8">
               <h3 className="text-lg font-bold text-gray-900 mb-4">Get Involved</h3>
               <p className="text-gray-600 mb-4">
-                Whether you're interested in attending, sponsoring, or learning more about the AI4GS initiative, 
+                Whether you're interested in sponsoring, participating, or learning more about the AI4GS initiative, 
                 we'd love to hear from you. Reach out to explore collaboration opportunities and be part of shaping 
                 the future of AI for the Global South.
               </p>
