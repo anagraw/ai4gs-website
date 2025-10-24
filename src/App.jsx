@@ -269,7 +269,7 @@ export default function AI4GSWebsite() {
                     February 2026 | India
                   </p>
                   <p className="text-gray-600 leading-relaxed mb-6">
-                    This seminar is the official precursor to the India AI Impact Summit, 
+                    This seminar is the official pre-summit event of the India AI Impact Summit, 
                     bringing together global perspectives to shape the future of AI for the Global South.
                   </p>
                   <a 
@@ -318,14 +318,6 @@ export default function AI4GSWebsite() {
                 <p className="text-gray-700">Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</p>
                 <p className="text-gray-600 text-sm">Abu Dhabi, UAE</p>
               </div>
-            </div>
-            <div className="mt-8">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">Get Involved</h3>
-              <p className="text-gray-600 mb-4">
-                Whether you're interested in sponsoring, participating, or learning more about the AI4GS initiative, 
-                we'd love to hear from you. Reach out to explore collaboration opportunities and be part of shaping 
-                the future of AI for the Global South.
-              </p>
             </div>
           </div>
         </div>
