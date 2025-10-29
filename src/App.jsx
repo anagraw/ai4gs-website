@@ -4,7 +4,7 @@ import People from './People';
 import Partners from './Partners';
 import Questions from './Questions';
 import AiImpactLogo from '../photos/ai-impact-logo.png';
-import IITDLogo from '../photos/IITD_AbuDhabi.png';
+import IITDLogo from '../photos/IIT Delhi - Abu Dhabi_Horizontal_page-0001.jpg';
 
 
 export default function AI4GSWebsite() {
@@ -398,20 +398,18 @@ export default function AI4GSWebsite() {
       </div>
 
       {/* Partners Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-indigo-50 to-purple-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Our Partners</h2>
-          <div className="flex justify-center items-center">
-            <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <img 
-                src={IITDLogo}
-                alt="IIT Delhi Abu Dhabi" 
-                className="h-24 w-auto object-contain"
-              />
-            </div>
-          </div>
+      <section className="py-12 px-4 bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-10">Co-Organizers</h2>
+          <img
+            src={IITDLogo}
+            alt="IIT Delhi Abu Dhabi"
+            className="h-48 sm:h-56 md:h-64 w-auto mx-auto object-contain"
+          />
         </div>
       </section>
+
+
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8 px-4">
         <div className="max-w-7xl mx-auto text-center">
