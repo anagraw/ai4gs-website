@@ -42,6 +42,7 @@ import AnilBDeolalikar from '../photos/‪Anil B. Deolalikar.png';
 import JuliaKreutzer from '../photos/Julia Kreutzer.jpg';
 import GbengaOgedegbe from '../photos/Gbenga Ogedegbe.jpg';
 import ThamarSolorio from '../photos/Thamar Solorio.jpg';
+import LyantonietteChua from '../photos/Lyantoniette Chua.jpg';
 
 export default function People() {
   const [selectedView, setSelectedView] = useState('organizers');
@@ -81,7 +82,7 @@ export default function People() {
     { name: 'Gbenga Ogedegbe', institution: 'NYU', photoUrl: GbengaOgedegbe, profile: 'https://nyulangone.org/doctors/1538227699/olugbenga-g-ogedegbe' },
     { name: 'Howard Lakougna', institution: 'Gates Foundation', photoUrl: HowardLakougna, profile: 'https://www.linkedin.com/in/howard-lakougna-5125b378' },
     { name: 'Ishtiaque Ahmed', institution: 'Uo Toronto', photoUrl: IshtiaqueAhmed, profile: 'https://www.ishtiaque.net/' },
-    { name: 'Jacki O Neill', institution: 'Microsoft', photoUrl: JackiONeill, profile: 'https://www.microsoft.com/en-us/research/people/jaoneil/' },
+    // { name: 'Jacki O Neill', institution: 'Microsoft', photoUrl: JackiONeill, profile: 'https://www.microsoft.com/en-us/research/people/jaoneil/' },
     { name: 'Joyojeet Pal', institution: 'UMich', photoUrl: JoyojeetPal, profile: 'https://www.si.umich.edu/people/joyojeet-pal' },
     { name: 'Julia Kreutzer', institution: 'Cohere', photoUrl: JuliaKreutzer, profile: 'https://juliakreutzer.github.io/' },
     { name: 'Kalika Bali', institution: 'Microsoft Research India', photoUrl: KalikaBali, profile: 'https://www.microsoft.com/en-us/research/people/kalikab/' },
@@ -97,7 +98,8 @@ export default function People() {
     { name: 'Vukosi Marivate', institution: 'Uo Pretoria', photoUrl: VukosiMarivate, profile: 'https://www.vima.co.za/' },
     { name: 'Weibke Denecke', institution: 'MIT', photoUrl: WeibkeDenecke, profile: 'https://lit.mit.edu/denecke/' },
     { name: 'Yasir Zaki', institution: 'NYU Abu Dhabi', photoUrl: YasirZaki, profile: 'https://ae.linkedin.com/in/yasir-zaki-7716a17' },
-    { name: 'Yosephine', institution: 'AI Singapore', photoUrl: Yosephine, profile: 'https://blogs.ntu.edu.sg/multi-net-lab/yosephine-susanto/' }
+    { name: 'Yosephine', institution: 'AI Singapore', photoUrl: Yosephine, profile: 'https://blogs.ntu.edu.sg/multi-net-lab/yosephine-susanto/' },
+    { name: 'Lyantoniette Chua', institution: 'AI Safety Asia', photoUrl: LyantonietteChua, profile: 'https://www.linkedin.com/in/lyantoniettechua/' }
   ].sort((a, b) => a.name.localeCompare(b.name));
 
   const renderOrganizers = () => (
