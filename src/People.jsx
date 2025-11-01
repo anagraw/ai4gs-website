@@ -43,6 +43,7 @@ import JuliaKreutzer from '../photos/Julia Kreutzer.jpg';
 import GbengaOgedegbe from '../photos/Gbenga Ogedegbe.jpg';
 import ThamarSolorio from '../photos/Thamar Solorio.jpg';
 import LyantonietteChua from '../photos/Lyantoniette Chua.jpg';
+import ChetanArora from '../photos/Chetan Arora.jpg';
 
 export default function People() {
   const [selectedView, setSelectedView] = useState('organizers');
@@ -99,7 +100,9 @@ export default function People() {
     { name: 'Weibke Denecke', institution: 'MIT', photoUrl: WeibkeDenecke, profile: 'https://lit.mit.edu/denecke/' },
     { name: 'Yasir Zaki', institution: 'NYU Abu Dhabi', photoUrl: YasirZaki, profile: 'https://ae.linkedin.com/in/yasir-zaki-7716a17' },
     { name: 'Yosephine', institution: 'AI Singapore', photoUrl: Yosephine, profile: 'https://blogs.ntu.edu.sg/multi-net-lab/yosephine-susanto/' },
-    { name: 'Lyantoniette Chua', institution: 'AI Safety Asia', photoUrl: LyantonietteChua, profile: 'https://www.linkedin.com/in/lyantoniettechua/' }
+    { name: 'Lyantoniette Chua', institution: 'AI Safety Asia', photoUrl: LyantonietteChua, profile: 'https://www.linkedin.com/in/lyantoniettechua/' },
+    { name: 'Chetan Arora', institution: 'IIT Delhi', photoUrl: ChetanArora, profile: 'https://www.cse.iitd.ac.in/~chetan/' }
+
   ].sort((a, b) => a.name.localeCompare(b.name));
 
   const renderOrganizers = () => (
