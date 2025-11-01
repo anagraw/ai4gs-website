@@ -4,7 +4,7 @@ import { ChevronDown } from 'lucide-react';
 import AdityaVashistha from '../photos/Aditya Vashistha.jpeg';
 import AlhamAjiFikri from '../photos/Alham Aji Fikri.jpg';
 import AnanyaAgrawal from '../photos/Ananya Agrawal.jpg';
-import AnimeshMukherjee from '../photos/Animesh Mukherjee.jpg';
+// import AnimeshMukherjee from '../photos/Animesh Mukherjee.jpg';
 import AseemSrivastava from '../photos/Aseem Srivastava.jpg';
 import BasharAlhafni from '../photos/Bashar Alhafni.png';
 import BoulbabaBenAmor from '../photos/Boulbaba Ben Amor.png';
@@ -84,7 +84,7 @@ export default function People() {
   const participants = [
   { name: 'Alham Aji Fikri', institution: 'MBZUAI', photoUrl: AlhamAjiFikri, profile: 'https://afaji.github.io/' },
   { name: 'Anil B. Deolalikar', institution: 'UC Riverside', photoUrl: AnilBDeolalikar, profile: 'https://profiles.ucr.edu/app/home/profile/anild' },
-  { name: 'Animesh Mukherjee', institution: 'IIT Kgp', photoUrl: AnimeshMukherjee, profile: 'https://cse.iitkgp.ac.in/~animeshm/' },
+  //{ name: 'Animesh Mukherjee', institution: 'IIT Kgp', photoUrl: AnimeshMukherjee, profile: 'https://cse.iitkgp.ac.in/~animeshm/' },
   { name: 'Bashar Alhafni', institution: 'MBZUAI', photoUrl: BasharAlhafni, profile: 'https://www.basharalhafni.com/' },
   { name: 'Boulbaba Ben Amor', institution: 'Inception/Microsoft AI4SG', photoUrl: BoulbabaBenAmor, profile: 'https://sites.google.com/view/boulbaba-ben-amor' },
   { name: 'Chirantan Chatterjee', institution: 'MBZUAI / Sussex Abu Dhabi', photoUrl: ChirantanChatterjee, profile: 'https://sites.google.com/view/chirantanonline/home' },
