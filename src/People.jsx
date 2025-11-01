@@ -44,16 +44,25 @@ import GbengaOgedegbe from '../photos/Gbenga Ogedegbe.jpg';
 import ThamarSolorio from '../photos/Thamar Solorio.jpg';
 import LyantonietteChua from '../photos/Lyantoniette Chua.jpg';
 import ChetanArora from '../photos/Chetan Arora.jpg';
+import SandeepSukumaran from '../photos/Sandeep Sukumaran.jpg';
+import HariprasadKodamana from '../photos/Hariprasad Kodamana.jpg';
 
 export default function People() {
   const [selectedView, setSelectedView] = useState('organizers');
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  // Add profile links for each person
   const coChairs = [
     { name: 'Monojit Choudhury', institution: 'MBZUAI', photoUrl: MonojitChoudhury, profile: 'https://mbzuai.ac.ae/study/faculty/monojit-choudhury/' },
     { name: 'Sunayana Sitaram', institution: 'Microsoft Research India', photoUrl: SunayanaSitaram, profile: 'https://www.microsoft.com/en-us/research/people/susitara/' }
   ].sort((a, b) => a.name.localeCompare(b.name));
+
+  // Social Event Chair single person
+  const socialEventChair = {
+    name: 'Hariprasad Kodamana',
+    institution: 'IIT Delhi Abu Dhabi',
+    photoUrl: HariprasadKodamana,
+    profile: 'https://web.iitd.ac.in/~kodamana/HariprasadKodamana.html'
+  };
 
   const executiveMembers = [
     { name: 'Aditya Vashistha', institution: 'Cornell University', photoUrl: AdityaVashistha, profile: 'https://www.adityavashistha.com/' },
@@ -73,37 +82,58 @@ export default function People() {
   ].sort((a, b) => a.name.localeCompare(b.name));
 
   const participants = [
-    { name: 'Alham Aji Fikri', institution: 'MBZUAI', photoUrl: AlhamAjiFikri, profile: 'https://afaji.github.io/' },
-    { name: 'Anil B. Deolalikar', institution: 'UC Riverside', photoUrl: AnilBDeolalikar, profile: 'https://profiles.ucr.edu/app/home/profile/anild' },
-    { name: 'Animesh Mukherjee', institution: 'IIT Kgp', photoUrl: AnimeshMukherjee, profile: 'https://cse.iitkgp.ac.in/~animeshm/' },
-    { name: 'Bashar Alhafni', institution: 'MBZUAI', photoUrl: BasharAlhafni, profile: 'https://www.basharalhafni.com/' },
-    { name: 'Boulbaba Ben Amor', institution: 'Inception/Microsoft AI4SG', photoUrl: BoulbabaBenAmor, profile: 'https://sites.google.com/view/boulbaba-ben-amor' },
-    { name: 'Chirantan Chatterjee', institution: 'MBZUAI / Sussex Abu Dhabi', photoUrl: ChirantanChatterjee, profile: 'https://sites.google.com/view/chirantanonline/home' },
-    { name: 'Danish Pruthi', institution: 'IISc', photoUrl: DanishPruthi, profile: 'https://danishpruthi.com/' },
-    { name: 'Gbenga Ogedegbe', institution: 'NYU', photoUrl: GbengaOgedegbe, profile: 'https://nyulangone.org/doctors/1538227699/olugbenga-g-ogedegbe' },
-    { name: 'Howard Lakougna', institution: 'Gates Foundation', photoUrl: HowardLakougna, profile: 'https://www.linkedin.com/in/howard-lakougna-5125b378' },
-    { name: 'Ishtiaque Ahmed', institution: 'Uo Toronto', photoUrl: IshtiaqueAhmed, profile: 'https://www.ishtiaque.net/' },
-    // { name: 'Jacki O Neill', institution: 'Microsoft', photoUrl: JackiONeill, profile: 'https://www.microsoft.com/en-us/research/people/jaoneil/' },
-    { name: 'Joyojeet Pal', institution: 'UMich', photoUrl: JoyojeetPal, profile: 'https://www.si.umich.edu/people/joyojeet-pal' },
-    { name: 'Julia Kreutzer', institution: 'Cohere', photoUrl: JuliaKreutzer, profile: 'https://juliakreutzer.github.io/' },
-    { name: 'Kalika Bali', institution: 'Microsoft Research India', photoUrl: KalikaBali, profile: 'https://www.microsoft.com/en-us/research/people/kalikab/' },
-    { name: 'Kentaro Toyama', institution: 'University of Michigan', photoUrl: KentaroToyama, profile: 'https://www.kentarotoyama.org/profile/default.htm' },
-    { name: 'Luciana Benotti', institution: 'Universidad Nacional de Córdoba', photoUrl: LucianaBenotti, profile: 'https://benotti.github.io/' },
-    { name: 'Luis Chiruzzo', institution: 'Universidad de la República, Uruguay', photoUrl: LuizChiruzzo, profile: 'https://www.fing.edu.uy/es/node/40865' },
-    { name: 'Melissa Densmore', institution: 'UCT, South Africa', photoUrl: MelissaDensmore, profile: 'https://www.melissadensmore.com/' },
-    { name: 'Munmun De Choudhury', institution: 'Georgia Tech', photoUrl: MunmunDeChoudhury, profile: 'http://www.munmund.net/' },
-    { name: 'Wessam Ezzeddine', institution: 'AI Safety UAE', photoUrl: WessamEzzeddine, profile: 'https://ae.linkedin.com/in/wes-ezzeddine' },
-    { name: 'Rida Qadri', institution: 'Google', photoUrl: RidaQadri, profile: 'https://ridaqadri.net/' },
-    { name: 'Talal Rahwan', institution: 'NYU Abu Dhabi', photoUrl: TalalRahwan, profile: 'https://www.trahwan.com/' },
-    { name: 'Thamar Solorio', institution: 'MBZUAI', photoUrl: ThamarSolorio, profile: 'https://mbzuai.ac.ae/study/faculty/thamar-solorio/' },
-    { name: 'Vukosi Marivate', institution: 'Uo Pretoria', photoUrl: VukosiMarivate, profile: 'https://www.vima.co.za/' },
-    { name: 'Weibke Denecke', institution: 'MIT', photoUrl: WeibkeDenecke, profile: 'https://lit.mit.edu/denecke/' },
-    { name: 'Yasir Zaki', institution: 'NYU Abu Dhabi', photoUrl: YasirZaki, profile: 'https://ae.linkedin.com/in/yasir-zaki-7716a17' },
-    { name: 'Yosephine', institution: 'AI Singapore', photoUrl: Yosephine, profile: 'https://blogs.ntu.edu.sg/multi-net-lab/yosephine-susanto/' },
-    { name: 'Lyantoniette Chua', institution: 'AI Safety Asia', photoUrl: LyantonietteChua, profile: 'https://www.linkedin.com/in/lyantoniettechua/' },
-    { name: 'Chetan Arora', institution: 'IIT Delhi', photoUrl: ChetanArora, profile: 'https://www.cse.iitd.ac.in/~chetan/' }
-
-  ].sort((a, b) => a.name.localeCompare(b.name));
+  { name: 'Alham Aji Fikri', institution: 'MBZUAI', photoUrl: AlhamAjiFikri, profile: 'https://afaji.github.io/' },
+  { name: 'Anil B. Deolalikar', institution: 'UC Riverside', photoUrl: AnilBDeolalikar, profile: 'https://profiles.ucr.edu/app/home/profile/anild' },
+  { name: 'Animesh Mukherjee', institution: 'IIT Kgp', photoUrl: AnimeshMukherjee, profile: 'https://cse.iitkgp.ac.in/~animeshm/' },
+  { name: 'Bashar Alhafni', institution: 'MBZUAI', photoUrl: BasharAlhafni, profile: 'https://www.basharalhafni.com/' },
+  { name: 'Boulbaba Ben Amor', institution: 'Inception/Microsoft AI4SG', photoUrl: BoulbabaBenAmor, profile: 'https://sites.google.com/view/boulbaba-ben-amor' },
+  { name: 'Chirantan Chatterjee', institution: 'MBZUAI / Sussex Abu Dhabi', photoUrl: ChirantanChatterjee, profile: 'https://sites.google.com/view/chirantanonline/home' },
+  { name: 'Danish Pruthi', institution: 'IISc', photoUrl: DanishPruthi, profile: 'https://danishpruthi.com/' },
+  { name: 'Gbenga Ogedegbe', institution: 'NYU', photoUrl: GbengaOgedegbe, profile: 'https://nyulangone.org/doctors/1538227699/olugbenga-g-ogedegbe' },
+  { name: 'Howard Lakougna', institution: 'Gates Foundation', photoUrl: HowardLakougna, profile: 'https://www.linkedin.com/in/howard-lakougna-5125b378' },
+  { name: 'Ishtiaque Ahmed', institution: 'Uo Toronto', photoUrl: IshtiaqueAhmed, profile: 'https://www.ishtiaque.net/' },
+  // { name: 'Jacki O Neill', institution: 'Microsoft', photoUrl: JackiONeill, profile: 'https://www.microsoft.com/en-us/research/people/jaoneil/' },
+  { name: 'Joyojeet Pal', institution: 'UMich', photoUrl: JoyojeetPal, profile: 'https://www.si.umich.edu/people/joyojeet-pal' },
+  { name: 'Julia Kreutzer', institution: 'Cohere', photoUrl: JuliaKreutzer, profile: 'https://juliakreutzer.github.io/' },
+  { name: 'Kalika Bali', institution: 'Microsoft Research India', photoUrl: KalikaBali, profile: 'https://www.microsoft.com/en-us/research/people/kalikab/' },
+  { name: 'Kentaro Toyama', institution: 'University of Michigan', photoUrl: KentaroToyama, profile: 'https://www.kentarotoyama.org/profile/default.htm' },
+  { name: 'Luciana Benotti', institution: 'Universidad Nacional de Córdoba', photoUrl: LucianaBenotti, profile: 'https://benotti.github.io/' },
+  { name: 'Luis Chiruzzo', institution: 'Universidad de la República, Uruguay', photoUrl: LuizChiruzzo, profile: 'https://www.fing.edu.uy/es/node/40865' },
+  { name: 'Melissa Densmore', institution: 'UCT, South Africa', photoUrl: MelissaDensmore, profile: 'https://www.melissadensmore.com/' },
+  { name: 'Munmun De Choudhury', institution: 'Georgia Tech', photoUrl: MunmunDeChoudhury, profile: 'http://www.munmund.net/' },
+  { name: 'Wessam Ezzeddine', institution: 'AI Safety UAE', photoUrl: WessamEzzeddine, profile: 'https://ae.linkedin.com/in/wes-ezzeddine' },
+  { name: 'Rida Qadri', institution: 'Google', photoUrl: RidaQadri, profile: 'https://ridaqadri.net/' },
+  { name: 'Talal Rahwan', institution: 'NYU Abu Dhabi', photoUrl: TalalRahwan, profile: 'https://www.trahwan.com/' },
+  { name: 'Thamar Solorio', institution: 'MBZUAI', photoUrl: ThamarSolorio, profile: 'https://mbzuai.ac.ae/study/faculty/thamar-solorio/' },
+  { name: 'Vukosi Marivate', institution: 'Uo Pretoria', photoUrl: VukosiMarivate, profile: 'https://www.vima.co.za/' },
+  { name: 'Weibke Denecke', institution: 'MIT', photoUrl: WeibkeDenecke, profile: 'https://lit.mit.edu/denecke/' },
+  { name: 'Yasir Zaki', institution: 'NYU Abu Dhabi', photoUrl: YasirZaki, profile: 'https://ae.linkedin.com/in/yasir-zaki-7716a17' },
+  { name: 'Yosephine', institution: 'AI Singapore', photoUrl: Yosephine, profile: 'https://blogs.ntu.edu.sg/multi-net-lab/yosephine-susanto/' },
+  { name: 'Lyantoniette Chua', institution: 'AI Safety Asia', photoUrl: LyantonietteChua, profile: 'https://www.linkedin.com/in/lyantoniettechua/' },
+  { name: 'Chetan Arora', institution: 'IIT Delhi', photoUrl: ChetanArora, profile: 'https://www.cse.iitd.ac.in/~chetan/' },
+  { name: 'Sandeep Sukumaran', institution: 'IIT Delhi', photoUrl: SandeepSukumaran, profile: 'https://web.iitd.ac.in/~san81/' }
+].sort((a, b) => a.name.localeCompare(b.name));
+  
+  const renderSocialEventChair = () => (
+    <div className="mb-16">
+      <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Social Event Chair</h3>
+      <div className="grid md:grid-cols-1 gap-12 max-w-4xl mx-auto">
+        <div className="text-center">
+          <img
+            src={socialEventChair.photoUrl}
+            alt={`Photo of ${socialEventChair.name}`}
+            className="w-40 h-40 rounded-full mx-auto mb-4 object-cover"
+          />
+          <h3 className="text-xl font-bold text-gray-900">
+            <a href={socialEventChair.profile} target="_blank" rel="noopener noreferrer" className="hover:underline text-indigo-600">
+              {socialEventChair.name}
+            </a>
+          </h3>
+          <p className="text-indigo-600 font-medium">{socialEventChair.institution}</p>
+        </div>
+      </div>
+    </div>
+  );
 
   const renderOrganizers = () => (
     <div>
@@ -128,6 +158,9 @@ export default function People() {
           ))}
         </div>
       </div>
+
+      {/* Social Event Chair */}
+      {renderSocialEventChair()}
 
       {/* Executive Members */}
       <div className="mb-16">
