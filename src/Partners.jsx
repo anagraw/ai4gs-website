@@ -1,63 +1,55 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import GatesFoundationLogo from '../photos/GatesFoundationlogo.svg'; 
+import MicrosoftLogo from '../photos/Microsoft.png';
 
 export default function Partners({ onContactClick }) {
-  // Partners data - ADD YOUR PARTNERS HERE
-  const platinumSponsors = [
-    { name: 'Partner 1', logo: null },
-    { name: 'Partner 2', logo: null },
-    { name: 'Partner 3', logo: null }
-  ];
-
+  // Updated partners data
   const goldSponsors = [
-    { name: 'Partner 1', logo: null },
-    { name: 'Partner 2', logo: null },
-    { name: 'Partner 3', logo: null },
-    { name: 'Partner 4', logo: null }
+    { name: 'Gates Foundation', logo: GatesFoundationLogo },
+    { name: 'Partner 2', logo: null }
   ];
 
   const silverSponsors = [
-    { name: 'Partner 1', logo: null },
-    { name: 'Partner 2', logo: null },
-    { name: 'Partner 3', logo: null },
-    { name: 'Partner 4', logo: null },
-    { name: 'Partner 5', logo: null },
-    { name: 'Partner 6', logo: null }
+    { name: 'Microsoft', logo: MicrosoftLogo },
+    { name: 'Partner 2', logo: null }
   ];
 
   return (
     <div className="py-16 px-4 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Partners & Sponsors</h2>
+        <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+          Partners & Sponsors
+        </h2>
         <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
           We collaborate with leading universities, research institutions, and industry partners 
           committed to advancing AI in the Global South.
         </p>
-        
-        {/* Platinum Sponsors */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Platinum Sponsors</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {platinumSponsors.map((sponsor, index) => (
-              <div key={index} className="bg-white p-12 rounded-lg shadow-lg flex items-center justify-center border-2 border-indigo-200">
-                <div className="text-center">
-                  <div className="w-32 h-32 bg-gray-200 rounded-lg mx-auto mb-3"></div>
-                  <p className="text-gray-600 font-semibold">{sponsor.name}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Gold Sponsors */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Gold Sponsors</h3>
-          <div className="grid md:grid-cols-4 gap-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            Gold Sponsors
+          </h3>
+          <div className="grid md:grid-cols-2 gap-8">
             {goldSponsors.map((sponsor, index) => (
-              <div key={index} className="bg-white p-8 rounded-lg shadow-lg flex items-center justify-center">
+              <div 
+                key={index}
+                className="bg-white p-8 rounded-lg shadow-lg flex items-center justify-center"
+              >
                 <div className="text-center">
-                  <div className="w-24 h-24 bg-gray-200 rounded-lg mx-auto mb-3"></div>
-                  <p className="text-gray-600 text-sm">{sponsor.name}</p>
+                  {sponsor.logo ? (
+                    <img 
+                      src={sponsor.logo} 
+                      alt={`${sponsor.name} logo`} 
+                      className="w-24 h-24 object-contain mx-auto mb-3"
+                    />
+                  ) : (
+                    <div className="w-24 h-24 bg-gray-200 rounded-lg mx-auto mb-3" />
+                  )}
+                  <p className="text-gray-600 text-sm font-medium">
+                    {sponsor.name}
+                  </p>
                 </div>
               </div>
             ))}
@@ -66,13 +58,28 @@ export default function Partners({ onContactClick }) {
 
         {/* Silver Sponsors */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Silver Sponsors</h3>
-          <div className="grid md:grid-cols-6 sm:grid-cols-3 gap-6">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            Silver Sponsors
+          </h3>
+          <div className="grid md:grid-cols-2 sm:grid-cols-2 gap-6">
             {silverSponsors.map((sponsor, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md flex items-center justify-center">
+              <div 
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-md flex items-center justify-center"
+              >
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gray-200 rounded-lg mx-auto mb-2"></div>
-                  <p className="text-gray-600 text-xs">{sponsor.name}</p>
+                  {sponsor.logo ? (
+                    <img 
+                      src={sponsor.logo} 
+                      alt={`${sponsor.name} logo`} 
+                      className="w-20 h-20 object-contain mx-auto mb-2"
+                    />
+                  ) : (
+                    <div className="w-16 h-16 bg-gray-200 rounded-lg mx-auto mb-2" />
+                  )}
+                  <p className="text-gray-600 text-xs font-medium">
+                    {sponsor.name}
+                  </p>
                 </div>
               </div>
             ))}
