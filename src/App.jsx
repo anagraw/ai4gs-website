@@ -5,6 +5,7 @@ import Partners from './Partners';
 import Questions from './Questions';
 import AiImpactLogo from '../photos/ai-impact-logo.png';
 import IITDLogo from '../photos/IIT Delhi - Abu Dhabi_Horizontal_page-0001.jpg';
+import MBZUAI_AI4GS_Banner from '../photos/MBZUAI_AI4GS_Banner_V04_311025_LR_page-0001.jpg';
 
 
 export default function AI4GSWebsite() {
@@ -16,9 +17,9 @@ export default function AI4GSWebsite() {
   const navigation = [
     { name: 'Home', id: 'home', page: 'home' },
     { name: 'About', id: 'about', page: 'home' },
-    // { name: 'Events', id: 'events', page: 'home' },
+    // { name: 'Events', id: 'events', page: 'home' },s
     { name: 'People', id: 'people', page: 'people' },
-    { name: 'Partners', id: 'partners', page: 'partners' },
+    // { name: 'Partners', id: 'partners', page: 'partners' },
     // { name: 'Submit Questions', id: 'questions', page: 'questions' },
   ];
 
@@ -108,51 +109,40 @@ export default function AI4GSWebsite() {
   const renderHomePage = () => (
     <>
       {/* Hero Section */}
-      <section id="home" className="pt-24 pb-16 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-            AI for the Global South
-          </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold text-indigo-600 mb-6">
-            Creating a Roadmap for the Next Decade
-          </h2>
-          <div className="flex items-center justify-center gap-4 mb-8 text-lg md:text-xl text-gray-700">
-            <span className="font-semibold">December 9-11, 2025</span>
-            <span className="text-gray-400">|</span>
-            <span className="font-semibold">MBZUAI, Abu Dhabi</span>
-          </div>
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            A convening of researchers who work for and with Global South communities to co-define 
-            a 10-year holistic and transdisciplinary research agenda for increasing AI's positive impact on the Global South.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <button 
-              onClick={() => {
-                setCurrentPage('people');
-                setActiveSection('people');
-              }}
-              className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors shadow-lg"
-            >
-              Participants Line-up
-            </button>
-            {/* <button 
-              onClick={() => {
-                setCurrentPage('questions');
-                setActiveSection('questions');
-              }}
-              className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg border-2 border-indigo-600"
-            >
-              Submit Questions
-            </button> */}
-          </div>
+      <section id="home" className="pt-20 pb-8 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <img
+            src={MBZUAI_AI4GS_Banner}
+            alt="AI4GS Conference Banner"
+            className="w-full rounded-xl shadow-lg object-contain"
+          />
         </div>
       </section>
+
 
       {/* About Section */}
       <section id="about" className="py-16 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">About AI4GS</h2>
-          
+          {/* Event meta + convening blurb */}
+          <div className="max-w-4xl mx-auto mb-12">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-3 text-gray-700 text-lg md:text-xl">
+              <div className="inline-flex items-center gap-2 font-semibold">
+                <Calendar className="h-5 w-5 text-indigo-600" />
+                <span>December 9-11, 2025</span>
+              </div>
+              <span className="text-gray-300">|</span>
+              <div className="inline-flex items-center gap-2 font-semibold">
+                <span className="text-indigo-600 font-bold" aria-hidden="true">@</span>
+                <span>MBZUAI, Abu Dhabi</span>
+              </div>
+            </div>
+
+            <p className="mt-4 text-lg md:text-xl text-gray-700 text-center max-w-3xl mx-auto">
+              A convening of researchers who work for and with Global South communities to co-define 
+              a 10-year holistic and transdisciplinary research agenda for increasing AI&apos;s positive impact on the Global South.
+            </p>
+          </div>
           <div className="max-w-4xl mx-auto mb-12">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               AI has made extraordinary progress, yet its benefits remain unevenly distributed, with much of the Global South underrepresented and underserved. Further, 
@@ -237,6 +227,24 @@ export default function AI4GSWebsite() {
             </div>
           </div> */}
         </div>
+        {/* People teaser (below About) */}
+        <section id="people-cta" className="py-10 px-4 bg-white">
+          <div className="max-w-7xl mx-auto text-center">
+            <button
+              onClick={() => {
+                setCurrentPage('people');
+                setActiveSection('people');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="inline-flex items-center justify-center px-8 py-3 rounded-lg font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition-colors shadow-md"
+              aria-label="View participants"
+            >
+              Participants Line-up
+            </button>
+          </div>
+        </section>
+
+
       </section>
       {/* Pre-Summit Event Banner */}
       <section className="py-12 px-4 bg-gradient-to-r from-indigo-50 via-purple-50 to-indigo-50">
@@ -312,7 +320,7 @@ export default function AI4GSWebsite() {
               </div>
             </div>
             <div className="flex items-start mb-6">
-              <Globe className="h-6 w-6 text-indigo-600 mr-3 mt-1 flex-shrink-0" />
+              {/* <Globe className="h-6 w-6 text-indigo-600 mr-3 mt-1 flex-shrink-0" /> */}
               <div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Venue</h3>
                 <p className="text-gray-700">Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</p>
@@ -338,7 +346,6 @@ export default function AI4GSWebsite() {
               }}
               className="flex items-center"
             >
-              <Globe className="h-8 w-8 text-indigo-600" />
               <span className="ml-2 text-2xl font-bold text-gray-900">AI4GS</span>
             </button>
             
@@ -414,7 +421,6 @@ export default function AI4GSWebsite() {
       <footer className="bg-gray-900 text-white py-8 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center mb-4">
-            <Globe className="h-6 w-6 mr-2" />
             <span className="text-xl font-bold">AI4GS</span>
           </div>
           <p className="text-gray-400 mb-2">AI for Global South Initiative</p>
