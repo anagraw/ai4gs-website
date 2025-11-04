@@ -44,7 +44,7 @@ import GbengaOgedegbe from '../photos/Gbenga Ogedegbe.jpg';
 import ThamarSolorio from '../photos/Thamar Solorio.jpg';
 import LyantonietteChua from '../photos/Lyantoniette Chua.jpg';
 import ChetanArora from '../photos/Chetan Arora.jpg';
-import SandeepSukumaran from '../photos/Sandeep Sukumaran.jpg';
+import SandeepSukumaran from '../photos/Sandeep_updated.png';
 import HariprasadKodamana from '../photos/Hariprasad Kodamana.jpg';
 
 export default function People() {
@@ -75,6 +75,7 @@ export default function People() {
     { name: 'Aseem Srivastava', photoUrl: AseemSrivastava, profile: 'https://as3eem.github.io/' },
     { name: 'Ananya Agrawal', photoUrl: AnanyaAgrawal, profile: 'https://in.linkedin.com/in/ananya-agrawal-6b9803222' },
     { name: 'Gayatri Bhat', photoUrl: GayatriBhat, profile: 'https://in.linkedin.com/in/gayatri-bhat-2a1a94193' },
+    { name: 'Helina Nigatu', photoUrl: HellinaNigatu, profile: '#' },
     { name: 'Madhur Jindal', photoUrl: MadhurJindal, profile: 'https://in.linkedin.com/in/madhur-jindal' },
     { name: 'Prashant Kodali', photoUrl: PrashantKodali, profile: 'https://in.linkedin.com/in/prashant-kodali' },
     { name: 'Sougata Saha', photoUrl: SougataSaha, profile: 'https://sougata-ub.github.io/' },
@@ -82,14 +83,14 @@ export default function People() {
   ].sort((a, b) => a.name.localeCompare(b.name));
 
   const participants = [
-  { name: 'Alham Aji Fikri', institution: 'MBZUAI', photoUrl: AlhamAjiFikri, profile: 'https://afaji.github.io/' },
+  //{ name: 'Alham Aji Fikri', institution: 'MBZUAI', photoUrl: AlhamAjiFikri, profile: 'https://afaji.github.io/' },
   { name: 'Anil B. Deolalikar', institution: 'UC Riverside', photoUrl: AnilBDeolalikar, profile: 'https://profiles.ucr.edu/app/home/profile/anild' },
   //{ name: 'Animesh Mukherjee', institution: 'IIT Kgp', photoUrl: AnimeshMukherjee, profile: 'https://cse.iitkgp.ac.in/~animeshm/' },
   { name: 'Bashar Alhafni', institution: 'MBZUAI', photoUrl: BasharAlhafni, profile: 'https://www.basharalhafni.com/' },
   { name: 'Boulbaba Ben Amor', institution: 'Inception/Microsoft AI4SG', photoUrl: BoulbabaBenAmor, profile: 'https://sites.google.com/view/boulbaba-ben-amor' },
   { name: 'Chirantan Chatterjee', institution: 'MBZUAI / Sussex Abu Dhabi', photoUrl: ChirantanChatterjee, profile: 'https://sites.google.com/view/chirantanonline/home' },
   { name: 'Danish Pruthi', institution: 'IISc', photoUrl: DanishPruthi, profile: 'https://danishpruthi.com/' },
-  { name: 'Gbenga Ogedegbe', institution: 'NYU', photoUrl: GbengaOgedegbe, profile: 'https://nyulangone.org/doctors/1538227699/olugbenga-g-ogedegbe' },
+  { name: 'Olugbenga G. Ogedegbe', institution: 'NYU', photoUrl: GbengaOgedegbe, profile: 'https://nyulangone.org/doctors/1538227699/olugbenga-g-ogedegbe' },
   { name: 'Howard Lakougna', institution: 'Gates Foundation', photoUrl: HowardLakougna, profile: 'https://www.linkedin.com/in/howard-lakougna-5125b378' },
   { name: 'Ishtiaque Ahmed', institution: 'Uo Toronto', photoUrl: IshtiaqueAhmed, profile: 'https://www.ishtiaque.net/' },
   // { name: 'Jacki O Neill', institution: 'Microsoft', photoUrl: JackiONeill, profile: 'https://www.microsoft.com/en-us/research/people/jaoneil/' },
@@ -187,13 +188,13 @@ export default function People() {
       {/* Organizing Members */}
       <div>
         <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Organizing Members</h3>
-        <div className="grid md:grid-cols-7 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
           {organizingMembers.map((person, index) => (
             <div key={index} className="text-center">
               <img
                 src={person.photoUrl}
                 alt={`Photo of ${person.name}`}
-                className="w-28 h-28 rounded-full mx-auto mb-4 object-cover"
+                className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
               />
               <h3 className="text-base font-bold text-gray-900">
                 <a href={person.profile} target="_blank" rel="noopener noreferrer" className="hover:underline text-indigo-600">
